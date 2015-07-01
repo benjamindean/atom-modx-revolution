@@ -10,7 +10,7 @@
     "cms"
   ],
   "activationCommands": {},
-  "repository": "https://github.com/benjaminabel/atom-modx-snippets",
+  "repository": "https://github.com/benjamindean/atom-modx-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

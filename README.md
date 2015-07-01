@@ -1,6 +1,6 @@
 # MODX Revolution Snippets
 
-[Atom.io](https://atom.io/packages/modx-snippets)  / [Github](https://github.com/bejaminabel/atom-modx-snippets)
+[Atom.io](https://atom.io/packages/modx-snippets)  / [Github](https://github.com/benjamindean/atom-modx-snippets)
 
 Shorthand [snippets](https://atom.io/packages/snippets) for MODX Revolution.
 
