@@ -1,0 +1,19 @@
+{
+  "name": "modx-snippets",
+  "main": "./lib/main",
+  "version": "0.1.0",
+  "description": "MODX Revolution Snippets for Atom",
+  "keywords": [
+    "snippets",
+    "modx",
+    "revolution",
+    "cms"
+  ],
+  "activationCommands": {},
+  "repository": "https://github.com/benjaminabel/atom-modx-snippets",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
