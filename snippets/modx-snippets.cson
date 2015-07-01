@@ -98,3 +98,9 @@
     'MODX.uri':
         'prefix': 'uri'
         'body': '[[${1}*uri${2}]]$3'
+    'MODX.props':
+        'prefix': '&'
+        'body': '&${1:prop}=`${2:value}`$3'
+    'MODX.filter':
+        'prefix': ':'
+        'body': ':${1:filter}=`${2:value}`$3'
