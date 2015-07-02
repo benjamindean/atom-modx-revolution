@@ -1,0 +1,169 @@
+'.text.html.php':
+    '$modx':
+        'prefix': '$'
+        'body': '$modx->'
+    'MODX.addEventListener':
+        'prefix': 'addEventListener'
+        'body': 'addEventListener(${1:$event}, ${2:$pluginId});$3'
+    'MODX.checkForLocks':
+        'prefix': 'checkForLocks'
+        'body': 'checkForLocks(${1:$id}, ${2:$action}, ${3:$type});$4'
+    'MODX.checkSession':
+        'prefix': 'checkSession'
+        'body': 'checkSession(${1:$sessionContext});$2'
+    'MODX.executeProcessor':
+        'prefix': 'executeProcessor'
+        'body': 'executeProcessor(${1:$options});$2'
+    'MODX.getAuthenticatedUser':
+        'prefix': 'getAuthenticatedUser'
+        'body': 'getAuthenticatedUser(${1:$contextKey});$2'
+    'MODX.getCacheManager':
+        'prefix': 'getCacheManager'
+        'body': 'getCacheManager();$1'
+    'MODX.getChildIds':
+        'prefix': 'getChildIds'
+        'body': 'getChildIds(${1:$id}, ${2:$depth}, ${3:$options});$4'
+    'MODX.getChunk':
+        'prefix': 'getChunk'
+        'body': 'getChunk(${1:$chunkName});$2'
+    'MODX.getConfig':
+        'prefix': 'getConfig'
+        'body': 'getConfig();$1'
+    'MODX.getContext':
+        'prefix': 'getContext'
+        'body': 'getContext(${1:$contextKey});$2'
+    'MODX.getEventMap':
+        'prefix': 'getEventMap'
+        'body': 'getEventMap(${1:$contextKey});$2'
+    'MODX.getLoginUserID':
+        'prefix': 'getLoginUserID'
+        'body': 'getLoginUserID(${1:$contextKey});$2'
+    'MODX.getLoginUserName':
+        'prefix': 'getLoginUserName'
+        'body': 'getLoginUserName(${1:$contextKey});$2'
+    'MODX.getParentIds':
+        'prefix': 'getParentIds'
+        'body': 'getParentIds(${1:$id}, ${2:$height}, ${3:$options});$4'
+    'MODX.getParser':
+        'prefix': 'getParser'
+        'body': 'getParser();$1'
+    'MODX.getPlaceholder':
+        'prefix': 'getPlaceholder'
+        'body': 'getPlaceholder(${1:$key});$2'
+    'MODX.getRegisteredClientScripts':
+        'prefix': 'getRegisteredClientScripts'
+        'body': 'getRegisteredClientScripts();$1'
+    'MODX.getRegisteredClientStartupScripts':
+        'prefix': 'getRegisteredClientStartupScripts'
+        'body': 'getRegisteredClientStartupScripts();$1'
+    'MODX.getRequest':
+        'prefix': 'getRequest'
+        'body': 'getRequest(${1:$class}, ${2:$path});$3'
+    'MODX.getResponse':
+        'prefix': 'getResponse'
+        'body': 'getResponse(${1:$class}, ${2:$path});$3'
+    'MODX.getService':
+        'prefix': 'getService'
+        'body': 'getService(${1:$name}, ${2:$class}, ${3:$path}, ${4:$params});$5'
+    'MODX.getSessionState':
+        'prefix': 'getSessionState'
+        'body': 'getSessionState();$1'
+    'MODX.getTree':
+        'prefix': 'getTree'
+        'body': 'getTree(${1:$id}, ${2:$depth});$3'
+    'MODX.getUser':
+        'prefix': 'getUser'
+        'body': 'getUser(${1:$contextKey});$2'
+    'MODX.getVersionData':
+        'prefix': 'getVersionData'
+        'body': 'getVersionData();$1'
+    'MODX.handleRequest':
+        'prefix': 'handleRequest'
+        'body': 'handleRequest();$1'
+    'MODX.hasPermission':
+        'prefix': 'hasPermission'
+        'body': 'hasPermission(${1:$pm});$2'
+    'MODX.initialize':
+        'prefix': 'initialize'
+        'body': 'initialize(${1:$contextKey});$2'
+    'MODX.invokeEvent':
+        'prefix': 'invokeEvent'
+        'body': 'invokeEvent(${1:$eventName}, ${2:$params});$3'
+    'MODX.lexicon':
+        'prefix': 'lexicon'
+        'body': 'lexicon(${1:$key}, ${2:$params});$3'
+    'MODX.makeUrl':
+        'prefix': 'makeUrl'
+        'body': 'makeUrl(${1:$id}, ${2:$context}, ${3:$args}, ${4:$scheme});$5'
+    'MODX.parseChunk':
+        'prefix': 'parseChunk'
+        'body': 'parseChunk(${1:$chunkName}, ${2:$chunkArr}, ${3:$prefix}, ${4:$suffix});$5'
+    'MODX.regClientCSS':
+        'prefix': 'regClientCSS'
+        'body': 'regClientCSS(${1:$src});$2'
+    'MODX.regClientHTMLBlock':
+        'prefix': 'regClientHTMLBlock'
+        'body': 'regClientHTMLBlock(${1:$html});$2'
+    'MODX.regClientScript':
+        'prefix': 'regClientScript'
+        'body': 'regClientScript(${1:$src}, ${2:$plaintext});$3'
+    'MODX.regClientStartupHTMLBlock':
+        'prefix': 'regClientStartupHTMLBlock'
+        'body': 'regClientStartupHTMLBlock(${1:$html});$2'
+    'MODX.regClientStartupScript':
+        'prefix': 'regClientStartupScript'
+        'body': 'regClientStartupScript(${1:$src}, ${2:$plaintext});$3'
+    'MODX.reloadConfig':
+        'prefix': 'reloadConfig'
+        'body': 'reloadConfig();$1'
+    'MODX.removeAllEventListener':
+        'prefix': 'removeAllEventListener'
+        'body': 'removeAllEventListener();$1'
+    'MODX.removeEventListener':
+        'prefix': 'removeEventListener'
+        'body': 'removeEventListener(${1:$event});$2'
+    'MODX.runProcessor':
+        'prefix': 'runProcessor'
+        'body': 'runProcessor(${1:$action}, ${2:$scriptProperties}, ${3:$options});$4'
+    'MODX.runSnippet':
+        'prefix': 'runSnippet'
+        'body': 'runSnippet(${1:$name}, ${2:$params});$3'
+    'MODX.sendError':
+        'prefix': 'sendError'
+        'body': 'sendError(${1:$type}, ${2:$options});$3'
+    'MODX.sendErrorPage':
+        'prefix': 'sendErrorPage'
+        'body': 'sendErrorPage(${1:$id}, ${2:$options});$3'
+    'MODX.sendForward':
+        'prefix': 'sendForward'
+        'body': 'sendForward(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+    'MODX.sendRedirect':
+        'prefix': 'sendRedirect'
+        'body': 'sendRedirect(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+    'MODX.sendUnauthorizedPage':
+        'prefix': 'sendUnauthorizedPage'
+        'body': 'sendUnauthorizedPage(${1:$options});$2'
+    'MODX.setDebug':
+        'prefix': 'setDebug'
+        'body': 'setDebug(${1:$debug}, ${2:$stopOnNotice});$3'
+    'MODX.setPlaceholder':
+        'prefix': 'setPlaceholder'
+        'body': 'setPlaceholder(${1:$key}, ${2:$value});$3'
+    'MODX.setPlaceholders':
+        'prefix': 'setPlaceholders'
+        'body': 'setPlaceholders(${1:$placeholders}, ${2:$namespace});$3'
+    'MODX.switchContext':
+        'prefix': 'switchContext'
+        'body': 'switchContext(${1:$contextKey});$2'
+    'MODX.toPlaceholder':
+        'prefix': 'toPlaceholder'
+        'body': 'toPlaceholder(${1:$key}, ${2:$value}, ${3:$prefix}, ${4:$separator}, ${5:$restore});$6'
+    'MODX.toPlaceholders':
+        'prefix': 'toPlaceholders'
+        'body': 'toPlaceholders(${1:$subject}, ${2:$prefix}, ${3:$separator}, ${4:$restore});$5'
+    'MODX.unsetPlaceholder':
+        'prefix': 'unsetPlaceholder'
+        'body': 'unsetPlaceholder(${1:$key});$2'
+    'MODX.unsetPlaceholders':
+        'prefix': 'unsetPlaceholders'
+        'body': 'unsetPlaceholders(${1:$keys});$2'
