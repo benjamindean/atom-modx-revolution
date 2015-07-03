@@ -4,8 +4,10 @@
 
 Shorthand [snippets](https://atom.io/packages/snippets) for MODX Revolution.
 
-![MODX Tag Snippet](https://cloud.githubusercontent.com/assets/5139993/8453687/bc60f71c-1fff-11e5-8e42-b75604e03f09.gif)
+Supports [Template Tags](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/commonly-used-template-tags) in .html & .tpl and [modX Class methods](http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx) with their arguments in .php.
+
+![MODX Class Snippets](https://cloud.githubusercontent.com/assets/5139993/8494629/3ec80d06-216f-11e5-8d22-581ac4c1b554.gif)
 
 ### Notes
-Universal shorthand for template tags is **mt**. MODX Class methods and their arguments also available.
+Universal shorthand for Template Tags is *mt*.  
 In case of issues with Emmet, use Enter key to toggle snippet.
