@@ -1,7 +1,7 @@
 {
   "name": "modx-snippets",
   "main": "./lib/main",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "MODX Revolution Snippets for Atom",
   "keywords": [
     "snippets",
