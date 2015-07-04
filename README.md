@@ -11,7 +11,7 @@ Supports [Template Tags](http://rtfm.modx.com/revolution/2.x/making-sites-with-m
 ###Triggers
 
 | Source  | Trigger | Scope |
-| ------------- | ------------- |
+| ------- | ------- | ----- |
 | modX  | $  | .text.html.php |
 | xPDO  | $p  | .text.html.php |
 | [[*tag]]  | mt  | .text.html.basic |
