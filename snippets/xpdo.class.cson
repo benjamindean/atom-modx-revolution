@@ -1,70 +1,70 @@
 '.text.html.php':
-    '$xpdo':
-        'prefix': '$p'
-        'body': '$xpdo->'
-    'xPDO.addPackage':
-        'prefix': 'addPackage'
-        'body': 'addPackage(${1:$pkg}, ${2:$path}, ${3:$tablePrefix});$4'
-    'xPDO.beginTransaction':
-        'prefix': 'beginTransaction'
-        'body': 'beginTransaction();$1'
-    'xPDO.commit':
-        'prefix': 'commit'
-        'body': 'commit();$1'
-    'xPDO.connect':
-        'prefix': 'connect'
-        'body': 'connect(${1:$driverOptions});$2'
-    'xPDO.fromJSON':
-        'prefix': 'fromJSON'
-        'body': 'fromJSON(${1:$src}, ${2:$asArray});$3'
-    'xPDO.getCollection':
-        'prefix': 'getCollection'
-        'body': 'getCollection(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
-    'xPDO.getCount':
-        'prefix': 'getCount'
-        'body': 'getCount(${1:$className}, ${2:$criteria});$3'
-    'xPDO.getDebug':
-        'prefix': 'getDebug'
-        'body': 'getDebug();'
-    'xPDO.getFields':
-        'prefix': 'getFields'
-        'body': 'getFields(${1:$className});$2'
-    'xPDO.getManager':
-        'prefix': 'getManager'
-        'body': 'getManager();'
-    'xPDO.getObject':
-        'prefix': 'getObject'
-        'body': 'getObject(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
-    'xPDO.getOption':
-        'prefix': 'getOption'
-        'body': 'getOption(${1:$key}, ${2:$options}, ${3:$default});$4'
-    'xPDO.getTableName':
-        'prefix': 'getTableName'
-        'body': 'getTableName(${1:$className}, ${2:$includeDb});$3'
-    'xPDO.loadClass':
-        'prefix': 'loadClass'
-        'body': 'loadClass(${1:$fqn}, ${2:$path}, ${3:$ignorePkg}, ${4:$transient});$5'
-    'xPDO.log':
-        'prefix': 'log'
-        'body': 'log(${1:$level}, ${2:$msg}, ${3:$target}, ${4:$def}, ${5:$file}, ${6:$line});$7'
-    'xPDO.newObject':
-        'prefix': 'newObject'
-        'body': 'newObject(${1:$className}, ${2:$fields});$3'
-    'xPDO.newQuery':
-        'prefix': 'newQuery'
-        'body': 'newQuery(${1:$class}, ${2:$criteria}, ${3:$cacheFlag});$4'
-    'xPDO.setDebug':
-        'prefix': 'setDebug'
-        'body': 'setDebug(${1:$v});$2'
-    'xPDO.setLogLevel':
-        'prefix': 'setLogLevel'
-        'body': 'setLogLevel(${1:$level});$2'
-    'xPDO.setLogTarget':
-        'prefix': 'setLogTarget'
-        'body': 'setLogTarget(${1:$target}, ${2:$options});$3'
-    'xPDO.setOption':
-        'prefix': 'setOption'
-        'body': 'setOption(${1:$key}, ${2:$value});$3'
-    'xPDO.toJSON':
-        'prefix': 'toJSON'
-        'body': 'toJSON(${1:$array});$2'
+  '$xpdo':
+    'prefix': '$p'
+    'body': '$xpdo->'
+  'xPDO.addPackage':
+    'prefix': 'addPackage'
+    'body': 'addPackage(${1:$pkg}, ${2:$path}, ${3:$tablePrefix});$4'
+  'xPDO.beginTransaction':
+    'prefix': 'beginTransaction'
+    'body': 'beginTransaction();$1'
+  'xPDO.commit':
+    'prefix': 'commit'
+    'body': 'commit();$1'
+  'xPDO.connect':
+    'prefix': 'connect'
+    'body': 'connect(${1:$driverOptions});$2'
+  'xPDO.fromJSON':
+    'prefix': 'fromJSON'
+    'body': 'fromJSON(${1:$src}, ${2:$asArray});$3'
+  'xPDO.getCollection':
+    'prefix': 'getCollection'
+    'body': 'getCollection(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
+  'xPDO.getCount':
+    'prefix': 'getCount'
+    'body': 'getCount(${1:$className}, ${2:$criteria});$3'
+  'xPDO.getDebug':
+    'prefix': 'getDebug'
+    'body': 'getDebug();'
+  'xPDO.getFields':
+    'prefix': 'getFields'
+    'body': 'getFields(${1:$className});$2'
+  'xPDO.getManager':
+    'prefix': 'getManager'
+    'body': 'getManager();'
+  'xPDO.getObject':
+    'prefix': 'getObject'
+    'body': 'getObject(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
+  'xPDO.getOption':
+    'prefix': 'getOption'
+    'body': 'getOption(${1:$key}, ${2:$options}, ${3:$default});$4'
+  'xPDO.getTableName':
+    'prefix': 'getTableName'
+    'body': 'getTableName(${1:$className}, ${2:$includeDb});$3'
+  'xPDO.loadClass':
+    'prefix': 'loadClass'
+    'body': 'loadClass(${1:$fqn}, ${2:$path}, ${3:$ignorePkg}, ${4:$transient});$5'
+  'xPDO.log':
+    'prefix': 'log'
+    'body': 'log(${1:$level}, ${2:$msg}, ${3:$target}, ${4:$def}, ${5:$file}, ${6:$line});$7'
+  'xPDO.newObject':
+    'prefix': 'newObject'
+    'body': 'newObject(${1:$className}, ${2:$fields});$3'
+  'xPDO.newQuery':
+    'prefix': 'newQuery'
+    'body': 'newQuery(${1:$class}, ${2:$criteria}, ${3:$cacheFlag});$4'
+  'xPDO.setDebug':
+    'prefix': 'setDebug'
+    'body': 'setDebug(${1:$v});$2'
+  'xPDO.setLogLevel':
+    'prefix': 'setLogLevel'
+    'body': 'setLogLevel(${1:$level});$2'
+  'xPDO.setLogTarget':
+    'prefix': 'setLogTarget'
+    'body': 'setLogTarget(${1:$target}, ${2:$options});$3'
+  'xPDO.setOption':
+    'prefix': 'setOption'
+    'body': 'setOption(${1:$key}, ${2:$value});$3'
+  'xPDO.toJSON':
+    'prefix': 'toJSON'
+    'body': 'toJSON(${1:$array});$2'

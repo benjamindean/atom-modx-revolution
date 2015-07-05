@@ -1,169 +1,169 @@
 '.text.html.php':
-    '$modx':
-        'prefix': '$'
-        'body': '$modx->'
-    'modX.addEventListener':
-        'prefix': 'addEventListener'
-        'body': 'addEventListener(${1:$event}, ${2:$pluginId});$3'
-    'modX.checkForLocks':
-        'prefix': 'checkForLocks'
-        'body': 'checkForLocks(${1:$id}, ${2:$action}, ${3:$type});$4'
-    'modX.checkSession':
-        'prefix': 'checkSession'
-        'body': 'checkSession(${1:$sessionContext});$2'
-    'modX.executeProcessor':
-        'prefix': 'executeProcessor'
-        'body': 'executeProcessor(${1:$options});$2'
-    'modX.getAuthenticatedUser':
-        'prefix': 'getAuthenticatedUser'
-        'body': 'getAuthenticatedUser(${1:$contextKey});$2'
-    'modX.getCacheManager':
-        'prefix': 'getCacheManager'
-        'body': 'getCacheManager();$1'
-    'modX.getChildIds':
-        'prefix': 'getChildIds'
-        'body': 'getChildIds(${1:$id}, ${2:$depth}, ${3:$options});$4'
-    'modX.getChunk':
-        'prefix': 'getChunk'
-        'body': 'getChunk(${1:$chunkName});$2'
-    'modX.getConfig':
-        'prefix': 'getConfig'
-        'body': 'getConfig();$1'
-    'modX.getContext':
-        'prefix': 'getContext'
-        'body': 'getContext(${1:$contextKey});$2'
-    'modX.getEventMap':
-        'prefix': 'getEventMap'
-        'body': 'getEventMap(${1:$contextKey});$2'
-    'modX.getLoginUserID':
-        'prefix': 'getLoginUserID'
-        'body': 'getLoginUserID(${1:$contextKey});$2'
-    'modX.getLoginUserName':
-        'prefix': 'getLoginUserName'
-        'body': 'getLoginUserName(${1:$contextKey});$2'
-    'modX.getParentIds':
-        'prefix': 'getParentIds'
-        'body': 'getParentIds(${1:$id}, ${2:$height}, ${3:$options});$4'
-    'modX.getParser':
-        'prefix': 'getParser'
-        'body': 'getParser();$1'
-    'modX.getPlaceholder':
-        'prefix': 'getPlaceholder'
-        'body': 'getPlaceholder(${1:$key});$2'
-    'modX.getRegisteredClientScripts':
-        'prefix': 'getRegisteredClientScripts'
-        'body': 'getRegisteredClientScripts();$1'
-    'modX.getRegisteredClientStartupScripts':
-        'prefix': 'getRegisteredClientStartupScripts'
-        'body': 'getRegisteredClientStartupScripts();$1'
-    'modX.getRequest':
-        'prefix': 'getRequest'
-        'body': 'getRequest(${1:$class}, ${2:$path});$3'
-    'modX.getResponse':
-        'prefix': 'getResponse'
-        'body': 'getResponse(${1:$class}, ${2:$path});$3'
-    'modX.getService':
-        'prefix': 'getService'
-        'body': 'getService(${1:$name}, ${2:$class}, ${3:$path}, ${4:$params});$5'
-    'modX.getSessionState':
-        'prefix': 'getSessionState'
-        'body': 'getSessionState();$1'
-    'modX.getTree':
-        'prefix': 'getTree'
-        'body': 'getTree(${1:$id}, ${2:$depth});$3'
-    'modX.getUser':
-        'prefix': 'getUser'
-        'body': 'getUser(${1:$contextKey});$2'
-    'modX.getVersionData':
-        'prefix': 'getVersionData'
-        'body': 'getVersionData();$1'
-    'modX.handleRequest':
-        'prefix': 'handleRequest'
-        'body': 'handleRequest();$1'
-    'modX.hasPermission':
-        'prefix': 'hasPermission'
-        'body': 'hasPermission(${1:$pm});$2'
-    'modX.initialize':
-        'prefix': 'initialize'
-        'body': 'initialize(${1:$contextKey});$2'
-    'modX.invokeEvent':
-        'prefix': 'invokeEvent'
-        'body': 'invokeEvent(${1:$eventName}, ${2:$params});$3'
-    'modX.lexicon':
-        'prefix': 'lexicon'
-        'body': 'lexicon(${1:$key}, ${2:$params});$3'
-    'modX.makeUrl':
-        'prefix': 'makeUrl'
-        'body': 'makeUrl(${1:$id}, ${2:$context}, ${3:$args}, ${4:$scheme});$5'
-    'modX.parseChunk':
-        'prefix': 'parseChunk'
-        'body': 'parseChunk(${1:$chunkName}, ${2:$chunkArr}, ${3:$prefix}, ${4:$suffix});$5'
-    'modX.regClientCSS':
-        'prefix': 'regClientCSS'
-        'body': 'regClientCSS(${1:$src});$2'
-    'modX.regClientHTMLBlock':
-        'prefix': 'regClientHTMLBlock'
-        'body': 'regClientHTMLBlock(${1:$html});$2'
-    'modX.regClientScript':
-        'prefix': 'regClientScript'
-        'body': 'regClientScript(${1:$src}, ${2:$plaintext});$3'
-    'modX.regClientStartupHTMLBlock':
-        'prefix': 'regClientStartupHTMLBlock'
-        'body': 'regClientStartupHTMLBlock(${1:$html});$2'
-    'modX.regClientStartupScript':
-        'prefix': 'regClientStartupScript'
-        'body': 'regClientStartupScript(${1:$src}, ${2:$plaintext});$3'
-    'modX.reloadConfig':
-        'prefix': 'reloadConfig'
-        'body': 'reloadConfig();$1'
-    'modX.removeAllEventListener':
-        'prefix': 'removeAllEventListener'
-        'body': 'removeAllEventListener();$1'
-    'modX.removeEventListener':
-        'prefix': 'removeEventListener'
-        'body': 'removeEventListener(${1:$event});$2'
-    'modX.runProcessor':
-        'prefix': 'runProcessor'
-        'body': 'runProcessor(${1:$action}, ${2:$scriptProperties}, ${3:$options});$4'
-    'modX.runSnippet':
-        'prefix': 'runSnippet'
-        'body': 'runSnippet(${1:$name}, ${2:$params});$3'
-    'modX.sendError':
-        'prefix': 'sendError'
-        'body': 'sendError(${1:$type}, ${2:$options});$3'
-    'modX.sendErrorPage':
-        'prefix': 'sendErrorPage'
-        'body': 'sendErrorPage(${1:$id}, ${2:$options});$3'
-    'modX.sendForward':
-        'prefix': 'sendForward'
-        'body': 'sendForward(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
-    'modX.sendRedirect':
-        'prefix': 'sendRedirect'
-        'body': 'sendRedirect(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
-    'modX.sendUnauthorizedPage':
-        'prefix': 'sendUnauthorizedPage'
-        'body': 'sendUnauthorizedPage(${1:$options});$2'
-    'modX.setDebug':
-        'prefix': 'setDebug'
-        'body': 'setDebug(${1:$debug}, ${2:$stopOnNotice});$3'
-    'modX.setPlaceholder':
-        'prefix': 'setPlaceholder'
-        'body': 'setPlaceholder(${1:$key}, ${2:$value});$3'
-    'modX.setPlaceholders':
-        'prefix': 'setPlaceholders'
-        'body': 'setPlaceholders(${1:$placeholders}, ${2:$namespace});$3'
-    'modX.switchContext':
-        'prefix': 'switchContext'
-        'body': 'switchContext(${1:$contextKey});$2'
-    'modX.toPlaceholder':
-        'prefix': 'toPlaceholder'
-        'body': 'toPlaceholder(${1:$key}, ${2:$value}, ${3:$prefix}, ${4:$separator}, ${5:$restore});$6'
-    'modX.toPlaceholders':
-        'prefix': 'toPlaceholders'
-        'body': 'toPlaceholders(${1:$subject}, ${2:$prefix}, ${3:$separator}, ${4:$restore});$5'
-    'modX.unsetPlaceholder':
-        'prefix': 'unsetPlaceholder'
-        'body': 'unsetPlaceholder(${1:$key});$2'
-    'modX.unsetPlaceholders':
-        'prefix': 'unsetPlaceholders'
-        'body': 'unsetPlaceholders(${1:$keys});$2'
+  '$modx':
+    'prefix': '$'
+    'body': '$modx->'
+  'modX.addEventListener':
+    'prefix': 'addEventListener'
+    'body': 'addEventListener(${1:$event}, ${2:$pluginId});$3'
+  'modX.checkForLocks':
+    'prefix': 'checkForLocks'
+    'body': 'checkForLocks(${1:$id}, ${2:$action}, ${3:$type});$4'
+  'modX.checkSession':
+    'prefix': 'checkSession'
+    'body': 'checkSession(${1:$sessionContext});$2'
+  'modX.executeProcessor':
+    'prefix': 'executeProcessor'
+    'body': 'executeProcessor(${1:$options});$2'
+  'modX.getAuthenticatedUser':
+    'prefix': 'getAuthenticatedUser'
+    'body': 'getAuthenticatedUser(${1:$contextKey});$2'
+  'modX.getCacheManager':
+    'prefix': 'getCacheManager'
+    'body': 'getCacheManager();$1'
+  'modX.getChildIds':
+    'prefix': 'getChildIds'
+    'body': 'getChildIds(${1:$id}, ${2:$depth}, ${3:$options});$4'
+  'modX.getChunk':
+    'prefix': 'getChunk'
+    'body': 'getChunk(${1:$chunkName});$2'
+  'modX.getConfig':
+    'prefix': 'getConfig'
+    'body': 'getConfig();$1'
+  'modX.getContext':
+    'prefix': 'getContext'
+    'body': 'getContext(${1:$contextKey});$2'
+  'modX.getEventMap':
+    'prefix': 'getEventMap'
+    'body': 'getEventMap(${1:$contextKey});$2'
+  'modX.getLoginUserID':
+    'prefix': 'getLoginUserID'
+    'body': 'getLoginUserID(${1:$contextKey});$2'
+  'modX.getLoginUserName':
+    'prefix': 'getLoginUserName'
+    'body': 'getLoginUserName(${1:$contextKey});$2'
+  'modX.getParentIds':
+    'prefix': 'getParentIds'
+    'body': 'getParentIds(${1:$id}, ${2:$height}, ${3:$options});$4'
+  'modX.getParser':
+    'prefix': 'getParser'
+    'body': 'getParser();$1'
+  'modX.getPlaceholder':
+    'prefix': 'getPlaceholder'
+    'body': 'getPlaceholder(${1:$key});$2'
+  'modX.getRegisteredClientScripts':
+    'prefix': 'getRegisteredClientScripts'
+    'body': 'getRegisteredClientScripts();$1'
+  'modX.getRegisteredClientStartupScripts':
+    'prefix': 'getRegisteredClientStartupScripts'
+    'body': 'getRegisteredClientStartupScripts();$1'
+  'modX.getRequest':
+    'prefix': 'getRequest'
+    'body': 'getRequest(${1:$class}, ${2:$path});$3'
+  'modX.getResponse':
+    'prefix': 'getResponse'
+    'body': 'getResponse(${1:$class}, ${2:$path});$3'
+  'modX.getService':
+    'prefix': 'getService'
+    'body': 'getService(${1:$name}, ${2:$class}, ${3:$path}, ${4:$params});$5'
+  'modX.getSessionState':
+    'prefix': 'getSessionState'
+    'body': 'getSessionState();$1'
+  'modX.getTree':
+    'prefix': 'getTree'
+    'body': 'getTree(${1:$id}, ${2:$depth});$3'
+  'modX.getUser':
+    'prefix': 'getUser'
+    'body': 'getUser(${1:$contextKey});$2'
+  'modX.getVersionData':
+    'prefix': 'getVersionData'
+    'body': 'getVersionData();$1'
+  'modX.handleRequest':
+    'prefix': 'handleRequest'
+    'body': 'handleRequest();$1'
+  'modX.hasPermission':
+    'prefix': 'hasPermission'
+    'body': 'hasPermission(${1:$pm});$2'
+  'modX.initialize':
+    'prefix': 'initialize'
+    'body': 'initialize(${1:$contextKey});$2'
+  'modX.invokeEvent':
+    'prefix': 'invokeEvent'
+    'body': 'invokeEvent(${1:$eventName}, ${2:$params});$3'
+  'modX.lexicon':
+    'prefix': 'lexicon'
+    'body': 'lexicon(${1:$key}, ${2:$params});$3'
+  'modX.makeUrl':
+    'prefix': 'makeUrl'
+    'body': 'makeUrl(${1:$id}, ${2:$context}, ${3:$args}, ${4:$scheme});$5'
+  'modX.parseChunk':
+    'prefix': 'parseChunk'
+    'body': 'parseChunk(${1:$chunkName}, ${2:$chunkArr}, ${3:$prefix}, ${4:$suffix});$5'
+  'modX.regClientCSS':
+    'prefix': 'regClientCSS'
+    'body': 'regClientCSS(${1:$src});$2'
+  'modX.regClientHTMLBlock':
+    'prefix': 'regClientHTMLBlock'
+    'body': 'regClientHTMLBlock(${1:$html});$2'
+  'modX.regClientScript':
+    'prefix': 'regClientScript'
+    'body': 'regClientScript(${1:$src}, ${2:$plaintext});$3'
+  'modX.regClientStartupHTMLBlock':
+    'prefix': 'regClientStartupHTMLBlock'
+    'body': 'regClientStartupHTMLBlock(${1:$html});$2'
+  'modX.regClientStartupScript':
+    'prefix': 'regClientStartupScript'
+    'body': 'regClientStartupScript(${1:$src}, ${2:$plaintext});$3'
+  'modX.reloadConfig':
+    'prefix': 'reloadConfig'
+    'body': 'reloadConfig();$1'
+  'modX.removeAllEventListener':
+    'prefix': 'removeAllEventListener'
+    'body': 'removeAllEventListener();$1'
+  'modX.removeEventListener':
+    'prefix': 'removeEventListener'
+    'body': 'removeEventListener(${1:$event});$2'
+  'modX.runProcessor':
+    'prefix': 'runProcessor'
+    'body': 'runProcessor(${1:$action}, ${2:$scriptProperties}, ${3:$options});$4'
+  'modX.runSnippet':
+    'prefix': 'runSnippet'
+    'body': 'runSnippet(${1:$name}, ${2:$params});$3'
+  'modX.sendError':
+    'prefix': 'sendError'
+    'body': 'sendError(${1:$type}, ${2:$options});$3'
+  'modX.sendErrorPage':
+    'prefix': 'sendErrorPage'
+    'body': 'sendErrorPage(${1:$id}, ${2:$options});$3'
+  'modX.sendForward':
+    'prefix': 'sendForward'
+    'body': 'sendForward(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+  'modX.sendRedirect':
+    'prefix': 'sendRedirect'
+    'body': 'sendRedirect(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+  'modX.sendUnauthorizedPage':
+    'prefix': 'sendUnauthorizedPage'
+    'body': 'sendUnauthorizedPage(${1:$options});$2'
+  'modX.setDebug':
+    'prefix': 'setDebug'
+    'body': 'setDebug(${1:$debug}, ${2:$stopOnNotice});$3'
+  'modX.setPlaceholder':
+    'prefix': 'setPlaceholder'
+    'body': 'setPlaceholder(${1:$key}, ${2:$value});$3'
+  'modX.setPlaceholders':
+    'prefix': 'setPlaceholders'
+    'body': 'setPlaceholders(${1:$placeholders}, ${2:$namespace});$3'
+  'modX.switchContext':
+    'prefix': 'switchContext'
+    'body': 'switchContext(${1:$contextKey});$2'
+  'modX.toPlaceholder':
+    'prefix': 'toPlaceholder'
+    'body': 'toPlaceholder(${1:$key}, ${2:$value}, ${3:$prefix}, ${4:$separator}, ${5:$restore});$6'
+  'modX.toPlaceholders':
+    'prefix': 'toPlaceholders'
+    'body': 'toPlaceholders(${1:$subject}, ${2:$prefix}, ${3:$separator}, ${4:$restore});$5'
+  'modX.unsetPlaceholder':
+    'prefix': 'unsetPlaceholder'
+    'body': 'unsetPlaceholder(${1:$key});$2'
+  'modX.unsetPlaceholders':
+    'prefix': 'unsetPlaceholders'
+    'body': 'unsetPlaceholders(${1:$keys});$2'
