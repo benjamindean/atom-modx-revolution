@@ -7,7 +7,8 @@
     "snippets",
     "modx",
     "revolution",
-    "cms"
+    "cms",
+    "xdpo"
   ],
   "activationCommands": {},
   "repository": "https://github.com/benjamindean/atom-modx-snippets",
