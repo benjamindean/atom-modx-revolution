@@ -5,66 +5,130 @@
   'xPDO.addPackage':
     'prefix': 'addPackage'
     'body': 'addPackage(${1:$pkg}, ${2:$path}, ${3:$tablePrefix});$4'
+    'description': 'This is used to load up the xPDO ORM mapping classes that define your package\'s objects.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.addpackage'
   'xPDO.beginTransaction':
     'prefix': 'beginTransaction'
     'body': 'beginTransaction();$1'
+    'description': 'xPDO::beginTransaction'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.begintransaction'
   'xPDO.commit':
     'prefix': 'commit'
     'body': 'commit();$1'
+    'description': 'xPDO::commit'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.commit'
   'xPDO.connect':
     'prefix': 'connect'
     'body': 'connect(${1:$driverOptions});$2'
+    'description': 'Creates a PDO database connection for use by xPDO. Returns true if the connection was created successfully.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.connect'
   'xPDO.fromJSON':
     'prefix': 'fromJSON'
     'body': 'fromJSON(${1:$src}, ${2:$asArray});$3'
+    'description': 'Converts a JSON source string into an equivalent PHP representation.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.fromjson'
   'xPDO.getCollection':
     'prefix': 'getCollection'
     'body': 'getCollection(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
+    'description': 'Retrieves a collection of xPDOObjects by the specified xPDOCriteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getcollection'
+  'xPDO.getCollectionGraph':
+    'prefix': 'getCollectionGraph'
+    'body': 'getCollectionGraph(${1:$className}, ${2:$graph}, ${3:$criteria}, ${4:$cacheFlag});$5'
+    'description': 'Retrieves a collection of xPDOObjects and related objects by the specified xPDOCriteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph'
   'xPDO.getCount':
     'prefix': 'getCount'
     'body': 'getCount(${1:$className}, ${2:$criteria});$3'
+    'description': 'Retrieves a count of xPDOObjects by the specified array or xPDOCriteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getcount'
   'xPDO.getDebug':
     'prefix': 'getDebug'
     'body': 'getDebug();'
+    'description': 'Returns the debug state for the XPDO connection.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getdebug'
   'xPDO.getFields':
     'prefix': 'getFields'
     'body': 'getFields(${1:$className});$2'
+    'description': 'Gets a list of fields (or columns) for an object by class name.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getfields'
+  'xPDO.getIterator':
+    'prefix': 'getIterator'
+    'body': 'getIterator(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
+    'description': 'Retrieves an xPDOIterator representing an iterable collection of xPDOObjects by the specified xPDOCriteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getiterator'
   'xPDO.getManager':
     'prefix': 'getManager'
     'body': 'getManager();'
+    'description': 'Gets the manager class for this xPDO connection.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getmanager'
   'xPDO.getObject':
     'prefix': 'getObject'
     'body': 'getObject(${1:$className}, ${2:$criteria}, ${3:$cacheFlag});$4'
+    'description': 'Retrieves a single object instance by the specified criteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getobject'
+  'xPDO.getObjectGraph':
+    'prefix': 'getObjectGraph'
+    'body': 'getObjectGraph(${1:$className}, ${2:$graph}, ${3:$criteria}, ${4:$cacheFlag});$5'
+    'description': 'Retrieves a single object instance and related objects defined by a graph, by the specified criteria.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph'
   'xPDO.getOption':
     'prefix': 'getOption'
     'body': 'getOption(${1:$key}, ${2:$options}, ${3:$default});$4'
+    'description': 'Get an xPDO configuration option value by key.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.getoption'
   'xPDO.getTableName':
     'prefix': 'getTableName'
     'body': 'getTableName(${1:$className}, ${2:$includeDb});$3'
+    'description': 'Gets the actual run-time table name from a specified class name.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.gettablename'
   'xPDO.loadClass':
     'prefix': 'loadClass'
     'body': 'loadClass(${1:$fqn}, ${2:$path}, ${3:$ignorePkg}, ${4:$transient});$5'
+    'description': 'Include a class by fully qualified name.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.loadclass'
   'xPDO.log':
     'prefix': 'log'
     'body': 'log(${1:$level}, ${2:$msg}, ${3:$target}, ${4:$def}, ${5:$file}, ${6:$line});$7'
+    'description': 'Log a message with details about where and when an event occurs.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.log'
   'xPDO.newObject':
     'prefix': 'newObject'
     'body': 'newObject(${1:$className}, ${2:$fields});$3'
+    'description': 'Creates a new instance of a specified class.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.newobject'
   'xPDO.newQuery':
     'prefix': 'newQuery'
     'body': 'newQuery(${1:$class}, ${2:$criteria}, ${3:$cacheFlag});$4'
+    'description': 'Creates an new xPDOQuery for a specified xPDOObject class.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.newquery'
+  'xPDO.query':
+    'prefix': 'query'
+    'body': 'query(${1:$statement});$2'
+    'description': 'Executes an SQL statement, returning a result set as a PDOStatement object.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.query'
   'xPDO.setDebug':
     'prefix': 'setDebug'
     'body': 'setDebug(${1:$v});$2'
+    'description': 'Sets the debug state for the XPDO connection.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.setdebug'
   'xPDO.setLogLevel':
     'prefix': 'setLogLevel'
     'body': 'setLogLevel(${1:$level});$2'
+    'description': 'Sets the logging level state for the XPDO instance.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.setloglevel'
   'xPDO.setLogTarget':
     'prefix': 'setLogTarget'
     'body': 'setLogTarget(${1:$target}, ${2:$options});$3'
+    'description': 'Sets the log target for xPDO::_log() calls.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.setlogtarget'
   'xPDO.setOption':
     'prefix': 'setOption'
     'body': 'setOption(${1:$key}, ${2:$value});$3'
+    'description': 'Sets an xPDO configuration option value.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.setoption'
   'xPDO.toJSON':
     'prefix': 'toJSON'
     'body': 'toJSON(${1:$array});$2'
+    'description': 'Converts a PHP array into a JSON encoded string.'
+    'descriptionMoreURL': 'http://rtfm.modx.com/xpdo/2.x/class-reference/xpdo/xpdo.tojson'
