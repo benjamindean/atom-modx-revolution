@@ -4,3 +4,5 @@
 * modX Class methods added
 ## 0.7.0 - 04-07-15
 * xPDO Class methods added
+## 0.8.0 - 06-07-15
+* modX Class descriptions and documentation links added
