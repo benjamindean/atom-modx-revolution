@@ -1,5 +1,5 @@
 {
-  "name": "modx-snippets",
+  "name": "modx-revolution",
   "main": "./lib/main",
   "version": "0.9.1",
   "description": "MODX Revolution support in Atom",
