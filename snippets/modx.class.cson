@@ -277,3 +277,13 @@
     'body': 'unsetPlaceholders(${1:$keys});$2'
     'description': 'Unset multiple placeholders, either by prefix or an array of keys.'
     'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders'
+  'modX.API':
+    'prefix': 'mapi'
+    'body': """
+      define('MODX_API_MODE', true);
+      require_once('$1/index.php');
+      $modx = new modX();
+      $modx->initialize('mgr');$2
+    """
+    'description': 'MODX_API_MODE'
+    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/loading-modx-externally'

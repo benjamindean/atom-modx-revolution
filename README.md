@@ -1,8 +1,8 @@
-# MODX Revolution Snippets
+# MODX Revolution support in Atom
 
-[Atom.io](https://atom.io/packages/modx-snippets)  / [Github](https://github.com/benjamindean/atom-modx-snippets)
+[**Atom.io**](https://atom.io/packages/modx-revolution)  :: [**GitHub**](https://github.com/benjamindean/atom-modx-revolution)
 
-Shorthand [snippets](https://atom.io/packages/snippets), autocomplete suggestions and basic syntax highlighting for MODX Revolution.
+Shorthand [snippets](https://atom.io/packages/snippets), autocomplete suggestions and syntax highlighting for MODX Revolution.
 
 Supports [Template Tags](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/commonly-used-template-tags) in .html & .tpl, [modX](http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx) and [xPDO](http://rtfm.modx.com/xpdo/1.x/class-reference/xpdo) Class methods with their arguments, descriptions and docs in .php.
 
@@ -10,7 +10,9 @@ Supports [Template Tags](http://rtfm.modx.com/revolution/2.x/making-sites-with-m
 
 ###Autocomplete & Syntax Highlighting
 
-![Autocomplete & Syntax highlighting](https://cloud.githubusercontent.com/assets/5139993/8544706/60d43854-24b0-11e5-8f5d-92cef1ed22fb.png)
+To enable syntax highlighting, switch to HTML (MODX) syntax.
+
+![Autocomplete & Syntax highlighting](https://cloud.githubusercontent.com/assets/5139993/8555633/fed13fc2-24f9-11e5-9ce2-edbf14fdbcee.png)
 
 ###Descriptions & Documentation links
 

@@ -6,14 +6,54 @@
 ]
 'patterns': [
   {
+    'include': '#modxtagsbegin'
+  },
+  {
+    'include': '#modxtagsend'
+  },
+  {
+    'match': '(&|@)([-_a-zA-Z0-9]+)'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.prop.modx'
+  },
+  {
+    'match': '([-_a-zA-Z0-9]+)'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.text.modx'
+  },
+  {
+    'match': '(!)?([%|*|~|\\=|:|\\?|\\+|\\$]|(?:\\+\\+)|(?:\\*#))'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.set.modx'
+    'name': 'punctuation.definition.block.modx'
+    'patterns': [
+      {
+        'include': '#modxtagsbegin'
+      },
+      {
+        'include': '#modxtagsend'
+      }
+      'patterns': [
+        {
+          'include': '#modxtagsbegin'
+        },
+        {
+          'include': '#modxtagsend'
+        }
+      ]
+    ]
+  },
+  {
     "include": "text.html.basic"
-  },
-  {
-    'match': '\\[\\['
-    'name': 'punctuation.definition.block.modx'
-  },
-  {
-    'match': '\\]\\]'
-    'name': 'punctuation.definition.block.modx'
   }
 ]
+'repository':
+  'modxtagsbegin':
+    'name': 'punctuation.definition.block.modx'
+    'match': '\\[\\['
+  'modxtagsend':
+    'name': 'punctuation.definition.block.modx'
+    'match': '\\]\\]'

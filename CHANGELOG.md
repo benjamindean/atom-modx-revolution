@@ -10,3 +10,5 @@
 * xPDO Class descriptions and documentation links added
 ## 0.9.1 - 07-07-15
 * Basic grammar added. MODX tags moved to autocomplete section.
+## 0.9.2 - 08-07-15
+* Grammar and syntax highlighting improved. I'm colorblind, so any suggestions about colors are welcomed.

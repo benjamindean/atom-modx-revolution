@@ -2,7 +2,7 @@
   "name": "modx-snippets",
   "main": "./lib/main",
   "version": "0.9.1",
-  "description": "MODX Revolution Snippets for Atom",
+  "description": "MODX Revolution support in Atom",
   "keywords": [
     "snippets",
     "modx",
@@ -11,7 +11,7 @@
     "xdpo"
   ],
   "activationCommands": {},
-  "repository": "https://github.com/benjamindean/atom-modx-snippets",
+  "repository": "https://github.com/benjamindean/atom-modx-revolution",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

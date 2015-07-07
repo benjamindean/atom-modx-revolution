@@ -3,9 +3,19 @@
 atom-text-editor,
 atom-text-editor::shadow {
   .punctuation.definition.block.modx {
+    color: lighten(@text-color-info, 10%);
+  }
+  .punctuation.definition.text.modx {
     color: @text-color-warning;
   }
   .punctuation.definition.prop.modx {
+    color: @text-color-success;
+  }
+  .punctuation.definition.set.modx {
     color: @text-color-error;
+  }
+  .invalid.illegal.bad-ampersand.html {
+    background-color: inherit;
+    color: inherit;
   }
 }
