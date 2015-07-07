@@ -1,106 +1,13 @@
-'.text.html.basic':
+'.text.html.basic, .text.html.modx':
   'MODX.tag':
     'prefix': 'mt'
     'body': '[[${1:*}${2:tag}$3]]$4'
-  'MODX.alias':
-    'prefix': 'alias'
-    'body': '[[${1}*alias${2}]]$3'
-  'MODX.cacheable':
-    'prefix': 'cacheable'
-    'body': '[[${1}*cacheable${2}]]$3'
-  'MODX.class_key':
-    'prefix': 'class_key'
-    'body': '[[${1}*class_key${2}]]$3'
-  'MODX.content':
-    'prefix': 'content'
-    'body': '[[${1}*content${2}]]$3'
-  'MODX.content_type':
-    'prefix': 'content_type'
-    'body': '[[${1}*content_type${2}]]$3'
-  'MODX.createdon':
-    'prefix': 'createdon'
-    'body': '[[${1}*createdon${2}]]$3'
-  'MODX.createdby':
-    'prefix': 'createdby'
-    'body': '[[${1}*createdby${2}]]$3'
-  'MODX.deleted':
-    'prefix': 'deleted'
-    'body': '[[${1}*deleted${2}]]$3'
-  'MODX.deletedby':
-    'prefix': 'deletedby'
-    'body': '[[${1}*deletedby${2}]]$3'
-  'MODX.deletedon':
-    'prefix': 'deletedon'
-    'body': '[[${1}*deletedon${2}]]$3'
-  'MODX.description':
-    'prefix': 'description'
-    'body': '[[${1}*description${2}]]$3'
-  'MODX.editedon':
-    'prefix': 'editedon'
-    'body': '[[${1}*editedon${2}]]$3'
-  'MODX.editedby':
-    'prefix': 'editedby'
-    'body': '[[${1}*editedby${2}]]$3'
-  'MODX.hidemenu':
-    'prefix': 'hidemenu'
-    'body': '[[${1}*hidemenu${2}]]$3'
-  'MODX.id':
-    'prefix': 'id'
-    'body': '[[${1}*id${2}]]$3'
-  'MODX.introtext':
-    'prefix': 'introtext'
-    'body': '[[${1}*introtext${2}]]$3'
-  'MODX.isfolder':
-    'prefix': 'isfolder'
-    'body': '[[${1}*isfolder${2}]]$3'
-  'MODX.link_attributes':
-    'prefix': 'link_attributes'
-    'body': '[[${1}*link_attributes${2}]]$3'
-  'MODX.longtitle':
-    'prefix': 'longtitle'
-    'body': '[[${1}*longtitle${2}]]$3'
-  'MODX.menuindex':
-    'prefix': 'menuindex'
-    'body': '[[${1}*menuindex${2}]]$3'
-  'MODX.menutitle':
-    'prefix': 'menutitle'
-    'body': '[[${1}*menutitle${2}]]$3'
-  'MODX.pagetitle':
-    'prefix': 'pagetitle'
-    'body': '[[${1}*pagetitle${2}]]$3'
-  'MODX.parent':
-    'prefix': 'parent'
-    'body': '[[${1}*parent${2}]]$3'
-  'MODX.pub_date':
-    'prefix': 'pub_date'
-    'body': '[[${1}*pub_date${2}]]$3'
-  'MODX.published':
-    'prefix': 'published'
-    'body': '[[${1}*published${2}]]$3'
-  'MODX.publishedby':
-    'prefix': 'publishedby'
-    'body': '[[${1}*publishedby${2}]]$3'
-  'MODX.publishedon':
-    'prefix': 'publishedon'
-    'body': '[[${1}*publishedon${2}]]$3'
-  'MODX.searchable':
-    'prefix': 'searchable'
-    'body': '[[${1}*searchable${2}]]$3'
-  'MODX.template':
-    'prefix': 'template'
-    'body': '[[${1}*template${2}]]$3'
-  'MODX.unpub_date':
-    'prefix': 'unpub_date'
-    'body': '[[${1}*unpub_date${2}]]$3'
-  'MODX.uri_override':
-    'prefix': 'uri_override'
-    'body': '[[${1}*uri_override${2}]]$3'
-  'MODX.uri':
-    'prefix': 'uri'
-    'body': '[[${1}*uri${2}]]$3'
   'MODX.props':
     'prefix': '&'
     'body': '&${1:prop}=`${2:value}`$3'
+  'MODX.propset':
+    'prefix': '@'
+    'body': '@${1:propertyset}'
   'MODX.filter':
     'prefix': ':'
     'body': ':${1:filter}=`${2:value}`$3'

@@ -9,20 +9,11 @@
     "include": "text.html.basic"
   },
   {
-    'begin': '(\\[\\[)'
-    'beginCaptures':
-      '1':
-        'name': 'punctuation.definition.block.begin.modx'
-    'end': '(\\]\\])'
-    'endCaptures':
-      '1':
-        'name': 'punctuation.definition.block.end.modx'
-    'name': 'meta.tag.template.modx'
-    'patterns': [
-      {
-        'match': '\\!|\\?'
-        'name': 'punctuation.definition.block.uncached.modx'
-      }
-    ]
+    'match': '\\[\\['
+    'name': 'punctuation.definition.block.modx'
+  },
+  {
+    'match': '\\]\\]'
+    'name': 'punctuation.definition.block.modx'
   }
 ]

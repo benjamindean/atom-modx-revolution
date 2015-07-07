@@ -8,3 +8,5 @@
 * modX Class descriptions and documentation links added
 ## 0.9.0 - 06-07-15
 * xPDO Class descriptions and documentation links added
+## 0.9.1 - 07-07-15
+* Basic grammar added. MODX tags moved to autocomplete section.
