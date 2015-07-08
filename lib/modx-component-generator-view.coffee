@@ -104,7 +104,7 @@ class modxComponentGeneratorView extends View
     string.replace(/__component-author__/g, componentAuthor)
 
   replaceComponentNamePlaceholders: (string, componentName) ->
-    placeholderRegex = /__(?:(component-name)|([cC]omponentName)|(component))__/g
+    placeholderRegex = /__(?:(component-name)|([cC]omponentName)|(componentname))__/g
     string = string.replace placeholderRegex, (match, dash, camel, underscore) =>
       if dash
         @dasherize(componentName)
@@ -142,7 +142,6 @@ class modxComponentGeneratorView extends View
     packagesDirectory = @getComponentsDirectory()
     templatePath = path.resolve(__dirname, '..', 'templates', @mode)
     @initPackage(ComponentPath, templatePath, @componentName, callback)
-
 
   runCommand: (command, args, exit) ->
     new BufferedProcess({command, args, exit})
