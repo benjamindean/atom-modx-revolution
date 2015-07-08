@@ -95,15 +95,15 @@ class modxComponentGeneratorView extends View
       else if fs.isFileSync(templateChildPath)
         fs.makeTreeSync(path.dirname(sourcePath))
         contents = fs.readFileSync(templateChildPath).toString()
-        contents = @replacecomponentNamePlaceholders(contents, componentName)
-        contents = @replacecomponentAuthorPlaceholders(contents, componentAuthor)
+        contents = @replaceComponentNamePlaceholders(contents, componentName)
+        contents = @replaceComponentAuthorPlaceholders(contents, componentAuthor)
         fs.writeFileSync(sourcePath, contents)
         callback()
 
-  replacecomponentAuthorPlaceholders: (string, componentAuthor) ->
+  replaceComponentAuthorPlaceholders: (string, componentAuthor) ->
     string.replace(/__component-author__/g, componentAuthor)
 
-  replacecomponentNamePlaceholders: (string, componentName) ->
+  replaceComponentNamePlaceholders: (string, componentName) ->
     placeholderRegex = /__(?:(component-name)|([cC]omponentName)|(component))__/g
     string = string.replace placeholderRegex, (match, dash, camel, underscore) =>
       if dash
