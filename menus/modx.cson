@@ -1,0 +1,9 @@
+'menu': [
+  'label': 'Packages'
+  'submenu': [
+    'label': 'MODX Revolution'
+    'submenu': [
+      { 'label': 'Generate MODX Component', 'command': 'modx-component-generator:generate-component' }
+    ]
+  ]
+]

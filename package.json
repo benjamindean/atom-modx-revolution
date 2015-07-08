@@ -10,11 +10,21 @@
     "cms",
     "xdpo"
   ],
-  "activationCommands": {},
+  "activationCommands": {
+    "atom-workspace": [
+      "modx-component-generator:generate-component"
+    ]
+  },
   "repository": "https://github.com/benjamindean/atom-modx-revolution",
   "license": "MIT",
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "fs-plus": "^2.0.0",
+    "temp": "^0.8.1",
+    "underscore-plus": "^1.0.0",
+    "wrench": "^1.5.8"
+  },
   "engines": {
     "atom": ">0.50.0"
-  },
-  "dependencies": {}
+  }
 }

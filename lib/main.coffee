@@ -1,6 +1,8 @@
+modxComponentGeneratorView = require './modx-component-generator-view'
+
 module.exports =
-  activate: (state) ->
+    activate: ->
+        @view = new modxComponentGeneratorView()
 
-  deactivate: ->
-
-  serialize: ->
+    deactivate: ->
+        @view?.destroy()
