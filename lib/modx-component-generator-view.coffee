@@ -77,7 +77,7 @@ class modxComponentGeneratorView extends View
 
   initPackage: (componentPath, templatePath, componentName, callback) ->
     componentName ?= path.basename(componentPath)
-    componentAuthor = process.env.GITHUB_USER or 'atom'
+    componentAuthor = atom.config.get('modx-component-generator.author') or process.env.GITHUB_USER or 'atom'
 
     fs.makeTreeSync(componentPath)
 
