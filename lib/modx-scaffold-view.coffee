@@ -18,7 +18,7 @@ class modxComponentGeneratorView extends View
 
   initialize: ->
     @commandSubscription = atom.commands.add 'atom-workspace',
-      'modx-generator:scaffold-component': => @attach('component'),
+      'modx-generator:scaffold-transport-package': => @attach('component'),
       'modx-generator:scaffold-theme': => @attach('theme')
 
     @miniEditor.on 'blur', => @close()
@@ -79,55 +79,15 @@ class modxComponentGeneratorView extends View
     else
       true
 
-  initPackage: (componentPath, templatePath, componentName, callback) ->
-    componentName ?= path.basename(componentPath)
-    componentAuthor = atom.config.get('modx-generator.author') or process.env.GITHUB_USER or 'atom'
-
+  initComponent: (componentPath, templatePath, callback) ->
     fsp.cp(templatePath, componentPath)
     callback()
-
-  replaceComponentAuthorPlaceholders: (string, componentAuthor) ->
-    string.replace(/__component-author__/g, componentAuthor)
-
-  replaceComponentNamePlaceholders: (string, componentName) ->
-    placeholderRegex = /__(?:(component-name)|([cC]omponentName)|(componentname))__/g
-    string = string.replace placeholderRegex, (match, dash, camel, underscore) =>
-      if dash
-        @dasherize(componentName)
-      else if camel
-        if /[a-z]/.test(camel[0])
-          componentName = componentName[0].toLowerCase() + componentName[1...]
-        else if /[A-Z]/.test(camel[0])
-          componentName = componentName[0].toUpperCase() + componentName[1...]
-        @camelize(componentName)
-
-      else if underscore
-        @underscore(componentName)
-
-  dasherize: (string) ->
-    string = string[0].toLowerCase() + string[1..]
-    string.replace /([A-Z])|(_)/g, (m, letter, underscore) ->
-      if letter
-        "-" + letter.toLowerCase()
-      else
-        "-"
-
-  camelize: (string) ->
-    string.replace /[_-]+(\w)/g, (m) -> m[1].toUpperCase()
-
-  underscore: (string) ->
-    string = string[0].toLowerCase() + string[1..]
-    string.replace /([A-Z])|(-)/g, (m, letter, dash) ->
-      if letter
-        "_" + letter.toLowerCase()
-      else
-        "_"
 
   createComponentFiles: (callback) ->
     ComponentPath = @getComponentPath()
     packagesDirectory = @getComponentsDirectory()
     templatePath = path.resolve(__dirname, '..', 'templates', @mode)
-    @initPackage(ComponentPath, templatePath, @componentName, callback)
+    @initComponent(ComponentPath, templatePath, callback)
 
   runCommand: (command, args, exit) ->
     new BufferedProcess({command, args, exit})

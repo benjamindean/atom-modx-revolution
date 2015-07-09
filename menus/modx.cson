@@ -3,7 +3,7 @@
   'submenu': [
     'label': 'MODX Revolution'
     'submenu': [
-      { 'label': 'Scaffold Component', 'command': 'modx-generator:scaffold-component' },
+      { 'label': 'Scaffold Transport Package', 'command': 'modx-generator:scaffold-transport-package' },
       { 'label': 'Scaffold Theme', 'command': 'modx-generator:scaffold-theme' }
     ]
   ]

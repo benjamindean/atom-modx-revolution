@@ -12,7 +12,7 @@
   ],
   "activationCommands": {
     "atom-workspace": [
-      "modx-generator:scaffold-component",
+      "modx-generator:scaffold-transport-package",
       "modx-generator:scaffold-theme"
     ]
   },

@@ -4,18 +4,6 @@ ncp = require 'ncp'
 wrench = require 'wrench'
 
 fsAdditions =
-  list: (directoryPath) ->
-    if fs.isDirectorySync(directoryPath)
-      try
-        fs.readdirSync(directoryPath)
-      catch e
-        []
-    else
-      []
-
-  listRecursive: (directoryPath) ->
-    wrench.readdirSyncRecursive(directoryPath)
-
   cp: (sourcePath, destinationPath) ->
     ncp(sourcePath, destinationPath)
 
