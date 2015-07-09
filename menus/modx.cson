@@ -3,7 +3,8 @@
   'submenu': [
     'label': 'MODX Revolution'
     'submenu': [
-      { 'label': 'Generate Component', 'command': 'modx-component-generator:generate-component' }
+      { 'label': 'Scaffold Component', 'command': 'modx-generator:scaffold-component' },
+      { 'label': 'Scaffold Theme', 'command': 'modx-generator:scaffold-theme' }
     ]
   ]
 ]

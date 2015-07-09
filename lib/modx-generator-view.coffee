@@ -11,14 +11,15 @@ class modxComponentGeneratorView extends View
   mode: null
 
   @content: ->
-    @div class: 'modx-component-generator', =>
+    @div class: 'modx-generator', =>
       @subview 'miniEditor', new TextEditorView(mini: true)
       @div class: 'error', outlet: 'error'
       @div class: 'message', outlet: 'message'
 
   initialize: ->
     @commandSubscription = atom.commands.add 'atom-workspace',
-      'modx-component-generator:generate-component': => @attach('component')
+      'modx-generator:scaffold-component': => @attach('component'),
+      'modx-generator:scaffold-theme': => @attach('theme')
 
     @miniEditor.on 'blur', => @close()
     atom.commands.add @element,
@@ -34,7 +35,10 @@ class modxComponentGeneratorView extends View
     @previouslyFocusedElement = $(document.activeElement)
     @panel.show()
     @message.text("Enter #{mode} path")
-    @setPathText("my-component")
+    if @mode is "component"
+        @setPathText("my-component")
+    else
+        @setPathText("my-theme")
     @miniEditor.focus()
 
   setPathText: (placeholderName, rangeToSelect) ->
@@ -77,28 +81,10 @@ class modxComponentGeneratorView extends View
 
   initPackage: (componentPath, templatePath, componentName, callback) ->
     componentName ?= path.basename(componentPath)
-    componentAuthor = atom.config.get('modx-component-generator.author') or process.env.GITHUB_USER or 'atom'
+    componentAuthor = atom.config.get('modx-generator.author') or process.env.GITHUB_USER or 'atom'
 
-    fs.makeTreeSync(componentPath)
-
-    for childPath in fsp.listRecursive(templatePath)
-      templateChildPath = path.resolve(templatePath, childPath)
-      relativePath = templateChildPath.replace(templatePath, "")
-      relativePath = relativePath.replace(/^\//, '')
-      relativePath = relativePath.replace(/\.template$/, '')
-      relativePath = @replacecomponentNamePlaceholders(relativePath, componentName)
-
-      sourcePath = path.join(componentPath, relativePath)
-      continue if fs.existsSync(sourcePath)
-      if fs.isDirectorySync(templateChildPath)
-        fs.makeTreeSync(sourcePath)
-      else if fs.isFileSync(templateChildPath)
-        fs.makeTreeSync(path.dirname(sourcePath))
-        contents = fs.readFileSync(templateChildPath).toString()
-        contents = @replaceComponentNamePlaceholders(contents, componentName)
-        contents = @replaceComponentAuthorPlaceholders(contents, componentAuthor)
-        fs.writeFileSync(sourcePath, contents)
-        callback()
+    fsp.cp(templatePath, componentPath)
+    callback()
 
   replaceComponentAuthorPlaceholders: (string, componentAuthor) ->
     string.replace(/__component-author__/g, componentAuthor)

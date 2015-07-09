@@ -1,4 +1,4 @@
-modxComponentGeneratorView = require './modx-component-generator-view'
+modxComponentGeneratorView = require './modx-generator-view'
 
 module.exports =
     config:
