@@ -1,0 +1,2 @@
+'atom-text-editor[data-grammar="text html modx"]:not([mini])':
+  'ctrl-space': 'snippets:expand'
