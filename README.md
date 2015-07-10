@@ -55,5 +55,5 @@ Please, read the [modExtra](https://github.com/splittingred/modExtra) documentat
     $modx->initialize('mgr');
 
 ### Notes
-* In case of issues with Emmet, use <kbd>Enter</kbd>+<kbd>Space</kbd> shortcut to toggle snippet.
+* In case of issues with Emmet, use <kbd>Ctrl</kbd>+<kbd>Space</kbd> shortcut to toggle snippet.
 * Because of large amount of files in Theme and Transport Package templates, there in no *Project* or *Author Name* placeholders for now. You have to manually replace them after scaffolding.
