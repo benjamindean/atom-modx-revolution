@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/benjamindean/atom-modx-revolution.svg?branch=master)](https://travis-ci.org/benjamindean/atom-modx-revolution)
 [![Dependency Status](https://david-dm.org/benjamindean/atom-modx-revolution.svg)](https://david-dm.org/benjamindean/atom-modx-revolution)
 
-[**Atom.io**](https://atom.io/packages/modx-revolution)  :: [**GitHub**](https://github.com/benjamindean/atom-modx-revolution)
+[Atom.io](https://atom.io/packages/modx-revolution)  | [GitHub](https://github.com/benjamindean/atom-modx-revolution)
 
 ##Features
 
