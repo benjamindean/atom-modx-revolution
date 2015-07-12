@@ -1,4 +1,6 @@
 path = require 'path'
+fs = require 'fs-plus'
+temp = require 'temp'
 {$} = require 'atom-space-pen-views'
 
 describe 'MODX Revolution', ->
@@ -56,3 +58,30 @@ describe 'MODX Revolution', ->
 
         atom.commands.dispatch(modxGeneratorView.element, "core:cancel")
         expect(modxGeneratorView.panel.isVisible()).toBeFalsy()
+
+
+  describe "when a package is generated", ->
+    [packageName, packagePath, packageRoot] = []
+
+    beforeEach ->
+      spyOn(atom, "open")
+
+      packageRoot = temp.mkdirSync('atom')
+      packageName = "modx-transport-package"
+      packagePath = path.join(packageRoot, packageName)
+      fs.removeSync(packageRoot)
+
+    afterEach ->
+      fs.removeSync(packageRoot)
+
+    describe 'when creating a package', ->
+      it "scaffolds a package and opens it", ->
+        executeCommand ->
+          atom.commands.dispatch(workspaceElement, "package-generator:generate-package")
+          packageGeneratorView = $(workspaceElement).find(".modx-generator").view()
+          expect(packageGeneratorView.hasParent()).toBeTruthy()
+          packageGeneratorView.miniEditor.setText(packagePath)
+          atom.commands.dispatch(packageGeneratorView.element, "core:confirm")
+          waitsFor ->
+            atom.open.callCount is 1
+          expect(atom.open.callCount).toBe 1
