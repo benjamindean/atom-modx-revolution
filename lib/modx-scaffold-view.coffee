@@ -81,8 +81,7 @@ class modxComponentGeneratorView extends View
 
     initComponent: (componentPath, templatePath, callback) ->
         fs.makeTreeSync(componentPath)
-        fsp.cp templatePath, componentPath, ->
-            callback()
+        fsp.cp templatePath, componentPath, callback
 
     createComponentFiles: (callback) ->
         ComponentPath = @getComponentPath()
