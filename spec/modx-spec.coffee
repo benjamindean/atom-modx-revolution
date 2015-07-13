@@ -28,8 +28,8 @@ describe 'MODX Revolution', ->
             executeCommand ->
                 atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-transport-package")
                 modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
-                packageName = modxGeneratorView.miniEditor.getModel().getSelectedText()
-                expect(packageName).toEqual 'my-component'
+                componentName = modxGeneratorView.miniEditor.getModel().getSelectedText()
+                expect(componentName).toEqual 'my-component'
 
                 fullPath = modxGeneratorView.miniEditor.getModel().getText()
                 base = atom.config.get 'core.projectHome'
@@ -40,8 +40,8 @@ describe 'MODX Revolution', ->
             executeCommand ->
                 atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-theme")
                 modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
-                packageName = modxGeneratorView.miniEditor.getModel().getSelectedText()
-                expect(packageName).toEqual 'my-theme'
+                componentName = modxGeneratorView.miniEditor.getModel().getSelectedText()
+                expect(componentName).toEqual 'my-theme'
 
                 fullPath = modxGeneratorView.miniEditor.getModel().getText()
                 base = atom.config.get 'core.projectHome'
@@ -59,31 +59,31 @@ describe 'MODX Revolution', ->
                 atom.commands.dispatch(modxGeneratorView.element, "core:cancel")
                 expect(modxGeneratorView.panel.isVisible()).toBeFalsy()
 
-    describe "when a package is generated", ->
-        [packageName, packagePath, packageRoot] = []
+    describe "when a component is generated", ->
+        [componentName, componentPath, componentRoot] = []
 
         beforeEach ->
             spyOn(atom, "open")
 
-            packageRoot = temp.mkdirSync('atom')
-            packageName = "modx-some-package"
-            packagePath = path.join(packageRoot, packageName)
-            fs.removeSync(packageRoot)
+            componentRoot = temp.mkdirSync('atom')
+            componentName = "modx-some-component"
+            componentPath = path.join(componentRoot, componentName)
+            fs.removeSync(componentRoot)
 
         afterEach ->
-            fs.removeSync(packageRoot)
+            fs.removeSync(componentRoot)
 
-        describe 'when creating a package', ->
+        describe 'when creating a component', ->
             [modxExecute] = []
 
             simulate = (type, callback) ->
-                if type is 'package'
+                if type is 'transport-package'
                     atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-transport-package")
                 else
                     atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-theme")
                 modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
                 expect(modxGeneratorView.hasParent()).toBeTruthy()
-                modxGeneratorView.miniEditor.setText(packagePath)
+                modxGeneratorView.miniEditor.setText(componentPath)
                 modxExecute = spyOn(modxGeneratorView, 'initComponent').andCallFake (command, args, exit) ->
                     process.nextTick -> exit()
                 atom.commands.dispatch(modxGeneratorView.element, "core:confirm")
@@ -94,12 +94,12 @@ describe 'MODX Revolution', ->
 
             it "scaffolds a package and opens it", ->
                 executeCommand ->
-                    simulate "package", ->
+                    simulate "transport-package", ->
                         expect(atom.open.callCount).toBe 1
-                        expect(atom.open.argsForCall[0][0].pathsToOpen[0]).toBe packagePath
+                        expect(atom.open.argsForCall[0][0].pathsToOpen[0]).toBe componentPath
 
             it "scaffolds a theme and opens it", ->
                 executeCommand ->
                     simulate "theme", ->
                         expect(atom.open.callCount).toBe 1
-                        expect(atom.open.argsForCall[0][0].pathsToOpen[0]).toBe packagePath
+                        expect(atom.open.argsForCall[0][0].pathsToOpen[0]).toBe componentPath

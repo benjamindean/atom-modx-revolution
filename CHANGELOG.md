@@ -14,10 +14,16 @@
 - xPDO Class descriptions and documentation links added
 
 ## [0.9.1] - 07-07-15
-- Basic grammar added. MODX tags moved to autocomplete section.
+- Basic grammar added. MODX tags moved to autocomplete section
 
 ## [0.9.2] - 08-07-15
-- Grammar and syntax highlighting improved. I'm colorblind, so any suggestions about colors are welcomed.
+- Grammar and syntax highlighting improved. I'm colorblind, so any suggestions about colors are welcomed
 
 ## [0.9.3] - 09-07-15
-- Generator replaced with simple scaffold function due to slow recursive replace.
+- Generator replaced with simple scaffold function due to slow recursive replace of placeholders
+
+## [1.0.0] - 13-07-15
+- Theme and Transport Package scaffolding implemented
+- New specs
+- Grammar adjustments
+- <kbd>Ctrl</kbd>+<kbd>Space</kbd> expands snippet

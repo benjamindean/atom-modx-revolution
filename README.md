@@ -5,6 +5,8 @@
 
 [Atom.io](https://atom.io/packages/modx-revolution)  | [GitHub](https://github.com/benjamindean/atom-modx-revolution)
 
+`apm install modx-revolution`
+
 ##Features
 
 ####Snippets
