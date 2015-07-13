@@ -1,32 +1,32 @@
 {
-    "name": "modx-revolution",
-    "main": "./lib/main",
-    "version": "0.9.2",
-    "description": "MODX Revolution support in Atom",
-    "keywords": [
+  "name": "modx-revolution",
+  "main": "./lib/main",
+  "version": "1.0.0",
+  "description": "MODX Revolution support in Atom",
+  "keywords": [
     "snippets",
     "modx",
     "revolution",
     "cms",
     "xdpo"
   ],
-    "activationCommands": {
-        "atom-workspace": [
+  "activationCommands": {
+    "atom-workspace": [
       "modx-generator:scaffold-transport-package",
       "modx-generator:scaffold-theme"
     ]
-    },
-    "repository": "https://github.com/benjamindean/atom-modx-revolution",
-    "license": "MIT",
-    "dependencies": {
-        "atom-space-pen-views": "^2.0.0",
-        "fs-plus": "^2.0.0",
-        "ncp": "^2.0.0",
-        "temp": "^0.8.1",
-        "underscore-plus": "^1.0.0",
-        "wrench": "^1.5.8"
-    },
-    "engines": {
-        "atom": ">0.50.0"
-    }
+  },
+  "repository": "https://github.com/benjamindean/atom-modx-revolution",
+  "license": "MIT",
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "fs-plus": "^2.0.0",
+    "ncp": "^2.0.0",
+    "temp": "^0.8.1",
+    "underscore-plus": "^1.0.0",
+    "wrench": "^1.5.8"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  }
 }
