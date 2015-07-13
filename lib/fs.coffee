@@ -4,7 +4,7 @@ ncp = require 'ncp'
 wrench = require 'wrench'
 
 fsAdditions =
-  cp: (sourcePath, destinationPath) ->
-    ncp(sourcePath, destinationPath)
+    cp: (sourcePath, destinationPath) ->
+        ncp(sourcePath, destinationPath)
 
 module.exports = _.extend({}, fs, fsAdditions)

@@ -1,289 +1,289 @@
 '.text.html.php':
-  '$modx':
-    'prefix': '$'
-    'body': '$modx->'
-  'modX.addEventListener':
-    'prefix': 'addEventListener'
-    'body': 'addEventListener(${1:$event}, ${2:$pluginId});$3'
-    'description': 'Add a plugin to the eventMap within the current execution cycle.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.addeventlistener'
-  'modX.checkForLocks':
-    'prefix': 'checkForLocks'
-    'body': 'checkForLocks(${1:$id}, ${2:$action}, ${3:$type});$4'
-    'description': 'Checks for locking on a page. A page is "locked" if another user is already viewing it. This prevents collisions.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.checkforlocks'
-  'modX.checkSession':
-    'prefix': 'checkSession'
-    'body': 'checkSession(${1:$sessionContext});$2'
-    'description': 'Checks to see if the user has a session in the specified context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.checksession'
-  'modX.executeProcessor':
-    'prefix': 'executeProcessor'
-    'body': 'executeProcessor(${1:$options});$2'
-    'description': 'Executes a specific processor. The only argument is an array.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor'
-  'modX.getAuthenticatedUser':
-    'prefix': 'getAuthenticatedUser'
-    'body': 'getAuthenticatedUser(${1:$contextKey});$2'
-    'description': 'Gets the user authenticated in the specified context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getauthenticateduser'
-  'modX.getCacheManager':
-    'prefix': 'getCacheManager'
-    'body': 'getCacheManager();$1'
-    'description': 'Get an extended xPDOCacheManager instance responsible for MODx caching.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getcachemanager'
-  'modX.getChildIds':
-    'prefix': 'getChildIds'
-    'body': 'getChildIds(${1:$id}, ${2:$depth}, ${3:$options});$4'
-    'description': 'Gets all of the child resource ids for a given resource.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getchildids'
-  'modX.getChunk':
-    'prefix': 'getChunk'
-    'body': 'getChunk(${1:$chunkName});$2'
-    'description': 'Processes and returns the output from an HTML chunk by name.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk'
-  'modX.getConfig':
-    'prefix': 'getConfig'
-    'body': 'getConfig();$1'
-    'description': 'Get the configuration for the site.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getconfig'
-  'modX.getContext':
-    'prefix': 'getContext'
-    'body': 'getContext(${1:$contextKey});$2'
-    'description': 'Retrieve a context by name without initializing it.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getcontext'
-  'modX.getEventMap':
-    'prefix': 'getEventMap'
-    'body': 'getEventMap(${1:$contextKey});$2'
-    'description': 'Gets a map of events and registered plugins for the specified context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.geteventmap'
-  'modX.getLoginUserID':
-    'prefix': 'getLoginUserID'
-    'body': 'getLoginUserID(${1:$contextKey});$2'
-    'description': 'Returns the current user ID, for the current or specified context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginuserid'
-  'modX.getLoginUserName':
-    'prefix': 'getLoginUserName'
-    'body': 'getLoginUserName(${1:$contextKey});$2'
-    'description': 'Returns the current user name, for the current or specified context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginusername'
-  'modX.getParentIds':
-    'prefix': 'getParentIds'
-    'body': 'getParentIds(${1:$id}, ${2:$height}, ${3:$options});$4'
-    'description': 'Gets all of the parent resource ids for a given resource.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getparentids'
-  'modX.getParser':
-    'prefix': 'getParser'
-    'body': 'getParser();$1'
-    'description': 'Gets the MODx parser.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getparser'
-  'modX.getPlaceholder':
-    'prefix': 'getPlaceholder'
-    'body': 'getPlaceholder(${1:$key});$2'
-    'description': 'Get a placeholder value by key.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getplaceholder'
-  'modX.getRegisteredClientScripts':
-    'prefix': 'getRegisteredClientScripts'
-    'body': 'getRegisteredClientScripts();$1'
-    'description': 'Returns all registered JavaScript and HTML blocks.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientscripts'
-  'modX.getRegisteredClientStartupScripts':
-    'prefix': 'getRegisteredClientStartupScripts'
-    'body': 'getRegisteredClientStartupScripts();$1'
-    'description': 'Returns all registered startup CSS, JavaScript, or HTML blocks.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientstartupscripts'
-  'modX.getRequest':
-    'prefix': 'getRequest'
-    'body': 'getRequest(${1:$class}, ${2:$path});$3'
-    'description': 'Attempt to load the request handler class, if not already loaded. Defaults to modRequest.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getrequest'
-  'modX.getResponse':
-    'prefix': 'getResponse'
-    'body': 'getResponse(${1:$class}, ${2:$path});$3'
-    'description': 'Attempt to load the response handler class, if not already loaded. Defaults to modResponse.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getresponse'
-  'modX.getService':
-    'prefix': 'getService'
-    'body': 'getService(${1:$name}, ${2:$class}, ${3:$path}, ${4:$params});$5'
-    'description': 'Load and return a named service class instance.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getservice'
-  'modX.getSessionState':
-    'prefix': 'getSessionState'
-    'body': 'getSessionState();$1'
-    'description': 'Returns the state of the SESSION being used by modX.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getsessionstate'
-  'modX.getTree':
-    'prefix': 'getTree'
-    'body': 'getTree(${1:$id}, ${2:$depth});$3'
-    'description': 'Get a site tree from a single or multiple modResource instances.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.gettree'
-  'modX.getUser':
-    'prefix': 'getUser'
-    'body': 'getUser(${1:$contextKey});$2'
-    'description': 'Get the current authenticated User and assigns it to the modX instance.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getuser'
-  'modX.getVersionData':
-    'prefix': 'getVersionData'
-    'body': 'getVersionData();$1'
-    'description': 'Gets the modX core version data. The array contains the following keys.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getversiondata'
-  'modX.handleRequest':
-    'prefix': 'handleRequest'
-    'body': 'handleRequest();$1'
-    'description': 'Initialize, cleanse, and process a request made to a modX site.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.handlerequest'
-  'modX.hasPermission':
-    'prefix': 'hasPermission'
-    'body': 'hasPermission(${1:$pm});$2'
-    'description': 'Returns true if user has the specified policy permission.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.haspermission'
-  'modX.initialize':
-    'prefix': 'initialize'
-    'body': 'initialize(${1:$contextKey});$2'
-    'description': 'Initializes the modX engine into a Context.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.initialize'
-  'modX.invokeEvent':
-    'prefix': 'invokeEvent'
-    'body': 'invokeEvent(${1:$eventName}, ${2:$params});$3'
-    'description': 'Invokes a specified Event with an optional array of parameters.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.invokeevent'
-  'modX.lexicon':
-    'prefix': 'lexicon'
-    'body': 'lexicon(${1:$key}, ${2:$params});$3'
-    'description': 'Grabs a processed Lexicon Entry.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon'
-  'modX.makeUrl':
-    'prefix': 'makeUrl'
-    'body': 'makeUrl(${1:$id}, ${2:$context}, ${3:$args}, ${4:$scheme});$5'
-    'description': 'Generates a URL representing a specified resource.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl'
-  'modX.parseChunk':
-    'prefix': 'parseChunk'
-    'body': 'parseChunk(${1:$chunkName}, ${2:$chunkArr}, ${3:$prefix}, ${4:$suffix});$5'
-    'description': 'Parse a chunk using an associative array of replacement variables.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk'
-  'modX.regClientCSS':
-    'prefix': 'regClientCSS'
-    'body': 'regClientCSS(${1:$src});$2'
-    'description': 'Register CSS to be injected inside the HEAD tag of a resource.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss'
-  'modX.regClientHTMLBlock':
-    'prefix': 'regClientHTMLBlock'
-    'body': 'regClientHTMLBlock(${1:$html});$2'
-    'description': 'Register HTML to be injected before the closing BODY tag.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclienthtmlblock'
-  'modX.regClientScript':
-    'prefix': 'regClientScript'
-    'body': 'regClientScript(${1:$src}, ${2:$plaintext});$3'
-    'description': 'Register JavaScript to be injected before the closing BODY tag.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientscript'
-  'modX.regClientStartupHTMLBlock':
-    'prefix': 'regClientStartupHTMLBlock'
-    'body': 'regClientStartupHTMLBlock(${1:$html});$2'
-    'description': 'Register HTML to be injected before the closing HEAD tag.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartuphtmlblock'
-  'modX.regClientStartupScript':
-    'prefix': 'regClientStartupScript'
-    'body': 'regClientStartupScript(${1:$src}, ${2:$plaintext});$3'
-    'description': 'Register JavaScript to be injected inside the HEAD tag of a resource.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartupscript'
-  'modX.reloadConfig':
-    'prefix': 'reloadConfig'
-    'body': 'reloadConfig();$1'
-    'description': 'Reload the config settings. Useful in cases where you\'ve loaded some Settings dynamically.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.reloadconfig'
-  'modX.removeAllEventListener':
-    'prefix': 'removeAllEventListener'
-    'body': 'removeAllEventListener();$1'
-    'description': 'Remove all registered events for the current request.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.removealleventlistener'
-  'modX.removeEventListener':
-    'prefix': 'removeEventListener'
-    'body': 'removeEventListener(${1:$event});$2'
-    'description': 'Remove an event from the eventMap so it will not be invoked.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.removeeventlistener'
-  'modX.runProcessor':
-    'prefix': 'runProcessor'
-    'body': 'runProcessor(${1:$action}, ${2:$scriptProperties}, ${3:$options});$4'
-    'description': 'Loads and runs a specific processor.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runprocessor'
-  'modX.runSnippet':
-    'prefix': 'runSnippet'
-    'body': 'runSnippet(${1:$name}, ${2:$params});$3'
-    'description': 'Process and return the output from a PHP snippet by name.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet'
-  'modX.sendError':
-    'prefix': 'sendError'
-    'body': 'sendError(${1:$type}, ${2:$options});$3'
-    'description': 'Send the user to a type-specific core error page and halt PHP execution.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.senderror'
-  'modX.sendErrorPage':
-    'prefix': 'sendErrorPage'
-    'body': 'sendErrorPage(${1:$id}, ${2:$options});$3'
-    'description': 'Send the user to a MODx virtual error page.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.senderrorpage'
-  'modX.sendForward':
-    'prefix': 'sendForward'
-    'body': 'sendForward(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
-    'description': 'Forwards the request to another resource without changing the URL.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendforward'
-  'modX.sendRedirect':
-    'prefix': 'sendRedirect'
-    'body': 'sendRedirect(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
-    'description': 'Sends a redirect to the specified URL using the specified method.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendredirect'
-  'modX.sendUnauthorizedPage':
-    'prefix': 'sendUnauthorizedPage'
-    'body': 'sendUnauthorizedPage(${1:$options});$2'
-    'description': 'Send the user to the MODx unauthorized page.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendunauthorizedpage'
-  'modX.setDebug':
-    'prefix': 'setDebug'
-    'body': 'setDebug(${1:$debug}, ${2:$stopOnNotice});$3'
-    'description': 'Sets the debugging features of the modX instance.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setdebug'
-  'modX.setPlaceholder':
-    'prefix': 'setPlaceholder'
-    'body': 'setPlaceholder(${1:$key}, ${2:$value});$3'
-    'description': 'Sets a Placeholder value, corresponding to the "+" syntax.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder'
-  'modX.setPlaceholders':
-    'prefix': 'setPlaceholders'
-    'body': 'setPlaceholders(${1:$placeholders}, ${2:$namespace});$3'
-    'description': 'Sets a collection of placeholders stored in an array or as object vars.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholders'
-  'modX.switchContext':
-    'prefix': 'switchContext'
-    'body': 'switchContext(${1:$contextKey});$2'
-    'description': 'Switches the primary Context for the modX instance.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.switchcontext'
-  'modX.toPlaceholder':
-    'prefix': 'toPlaceholder'
-    'body': 'toPlaceholder(${1:$key}, ${2:$value}, ${3:$prefix}, ${4:$separator}, ${5:$restore});$6'
-    'description': 'Recursively validates and sets placeholders appropriate to the value type passed.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder'
-  'modX.toPlaceholders':
-    'prefix': 'toPlaceholders'
-    'body': 'toPlaceholders(${1:$subject}, ${2:$prefix}, ${3:$separator}, ${4:$restore});$5'
-    'description': 'Sets placeholders from values stored in arrays and objects.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholders'
-  'modX.unsetPlaceholder':
-    'prefix': 'unsetPlaceholder'
-    'body': 'unsetPlaceholder(${1:$key});$2'
-    'description': 'Unsets a placeholder value by key.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholder'
-  'modX.unsetPlaceholders':
-    'prefix': 'unsetPlaceholders'
-    'body': 'unsetPlaceholders(${1:$keys});$2'
-    'description': 'Unset multiple placeholders, either by prefix or an array of keys.'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders'
-  'modX.API':
-    'prefix': 'mapi'
-    'body': """
-      define('MODX_API_MODE', true);
-      require_once('$1/index.php');
-      $modx = new modX();
-      $modx->initialize('mgr');$2
-    """
-    'description': 'MODX_API_MODE'
-    'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/loading-modx-externally'
+    '$modx':
+        'prefix': '$'
+        'body': '$modx->'
+    'modX.addEventListener':
+        'prefix': 'addEventListener'
+        'body': 'addEventListener(${1:$event}, ${2:$pluginId});$3'
+        'description': 'Add a plugin to the eventMap within the current execution cycle.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.addeventlistener'
+    'modX.checkForLocks':
+        'prefix': 'checkForLocks'
+        'body': 'checkForLocks(${1:$id}, ${2:$action}, ${3:$type});$4'
+        'description': 'Checks for locking on a page. A page is "locked" if another user is already viewing it. This prevents collisions.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.checkforlocks'
+    'modX.checkSession':
+        'prefix': 'checkSession'
+        'body': 'checkSession(${1:$sessionContext});$2'
+        'description': 'Checks to see if the user has a session in the specified context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.checksession'
+    'modX.executeProcessor':
+        'prefix': 'executeProcessor'
+        'body': 'executeProcessor(${1:$options});$2'
+        'description': 'Executes a specific processor. The only argument is an array.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor'
+    'modX.getAuthenticatedUser':
+        'prefix': 'getAuthenticatedUser'
+        'body': 'getAuthenticatedUser(${1:$contextKey});$2'
+        'description': 'Gets the user authenticated in the specified context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getauthenticateduser'
+    'modX.getCacheManager':
+        'prefix': 'getCacheManager'
+        'body': 'getCacheManager();$1'
+        'description': 'Get an extended xPDOCacheManager instance responsible for MODx caching.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getcachemanager'
+    'modX.getChildIds':
+        'prefix': 'getChildIds'
+        'body': 'getChildIds(${1:$id}, ${2:$depth}, ${3:$options});$4'
+        'description': 'Gets all of the child resource ids for a given resource.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getchildids'
+    'modX.getChunk':
+        'prefix': 'getChunk'
+        'body': 'getChunk(${1:$chunkName});$2'
+        'description': 'Processes and returns the output from an HTML chunk by name.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk'
+    'modX.getConfig':
+        'prefix': 'getConfig'
+        'body': 'getConfig();$1'
+        'description': 'Get the configuration for the site.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getconfig'
+    'modX.getContext':
+        'prefix': 'getContext'
+        'body': 'getContext(${1:$contextKey});$2'
+        'description': 'Retrieve a context by name without initializing it.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getcontext'
+    'modX.getEventMap':
+        'prefix': 'getEventMap'
+        'body': 'getEventMap(${1:$contextKey});$2'
+        'description': 'Gets a map of events and registered plugins for the specified context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.geteventmap'
+    'modX.getLoginUserID':
+        'prefix': 'getLoginUserID'
+        'body': 'getLoginUserID(${1:$contextKey});$2'
+        'description': 'Returns the current user ID, for the current or specified context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginuserid'
+    'modX.getLoginUserName':
+        'prefix': 'getLoginUserName'
+        'body': 'getLoginUserName(${1:$contextKey});$2'
+        'description': 'Returns the current user name, for the current or specified context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginusername'
+    'modX.getParentIds':
+        'prefix': 'getParentIds'
+        'body': 'getParentIds(${1:$id}, ${2:$height}, ${3:$options});$4'
+        'description': 'Gets all of the parent resource ids for a given resource.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getparentids'
+    'modX.getParser':
+        'prefix': 'getParser'
+        'body': 'getParser();$1'
+        'description': 'Gets the MODx parser.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getparser'
+    'modX.getPlaceholder':
+        'prefix': 'getPlaceholder'
+        'body': 'getPlaceholder(${1:$key});$2'
+        'description': 'Get a placeholder value by key.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getplaceholder'
+    'modX.getRegisteredClientScripts':
+        'prefix': 'getRegisteredClientScripts'
+        'body': 'getRegisteredClientScripts();$1'
+        'description': 'Returns all registered JavaScript and HTML blocks.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientscripts'
+    'modX.getRegisteredClientStartupScripts':
+        'prefix': 'getRegisteredClientStartupScripts'
+        'body': 'getRegisteredClientStartupScripts();$1'
+        'description': 'Returns all registered startup CSS, JavaScript, or HTML blocks.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientstartupscripts'
+    'modX.getRequest':
+        'prefix': 'getRequest'
+        'body': 'getRequest(${1:$class}, ${2:$path});$3'
+        'description': 'Attempt to load the request handler class, if not already loaded. Defaults to modRequest.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getrequest'
+    'modX.getResponse':
+        'prefix': 'getResponse'
+        'body': 'getResponse(${1:$class}, ${2:$path});$3'
+        'description': 'Attempt to load the response handler class, if not already loaded. Defaults to modResponse.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getresponse'
+    'modX.getService':
+        'prefix': 'getService'
+        'body': 'getService(${1:$name}, ${2:$class}, ${3:$path}, ${4:$params});$5'
+        'description': 'Load and return a named service class instance.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getservice'
+    'modX.getSessionState':
+        'prefix': 'getSessionState'
+        'body': 'getSessionState();$1'
+        'description': 'Returns the state of the SESSION being used by modX.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getsessionstate'
+    'modX.getTree':
+        'prefix': 'getTree'
+        'body': 'getTree(${1:$id}, ${2:$depth});$3'
+        'description': 'Get a site tree from a single or multiple modResource instances.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.gettree'
+    'modX.getUser':
+        'prefix': 'getUser'
+        'body': 'getUser(${1:$contextKey});$2'
+        'description': 'Get the current authenticated User and assigns it to the modX instance.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getuser'
+    'modX.getVersionData':
+        'prefix': 'getVersionData'
+        'body': 'getVersionData();$1'
+        'description': 'Gets the modX core version data. The array contains the following keys.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getversiondata'
+    'modX.handleRequest':
+        'prefix': 'handleRequest'
+        'body': 'handleRequest();$1'
+        'description': 'Initialize, cleanse, and process a request made to a modX site.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.handlerequest'
+    'modX.hasPermission':
+        'prefix': 'hasPermission'
+        'body': 'hasPermission(${1:$pm});$2'
+        'description': 'Returns true if user has the specified policy permission.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.haspermission'
+    'modX.initialize':
+        'prefix': 'initialize'
+        'body': 'initialize(${1:$contextKey});$2'
+        'description': 'Initializes the modX engine into a Context.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.initialize'
+    'modX.invokeEvent':
+        'prefix': 'invokeEvent'
+        'body': 'invokeEvent(${1:$eventName}, ${2:$params});$3'
+        'description': 'Invokes a specified Event with an optional array of parameters.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.invokeevent'
+    'modX.lexicon':
+        'prefix': 'lexicon'
+        'body': 'lexicon(${1:$key}, ${2:$params});$3'
+        'description': 'Grabs a processed Lexicon Entry.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon'
+    'modX.makeUrl':
+        'prefix': 'makeUrl'
+        'body': 'makeUrl(${1:$id}, ${2:$context}, ${3:$args}, ${4:$scheme});$5'
+        'description': 'Generates a URL representing a specified resource.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl'
+    'modX.parseChunk':
+        'prefix': 'parseChunk'
+        'body': 'parseChunk(${1:$chunkName}, ${2:$chunkArr}, ${3:$prefix}, ${4:$suffix});$5'
+        'description': 'Parse a chunk using an associative array of replacement variables.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk'
+    'modX.regClientCSS':
+        'prefix': 'regClientCSS'
+        'body': 'regClientCSS(${1:$src});$2'
+        'description': 'Register CSS to be injected inside the HEAD tag of a resource.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss'
+    'modX.regClientHTMLBlock':
+        'prefix': 'regClientHTMLBlock'
+        'body': 'regClientHTMLBlock(${1:$html});$2'
+        'description': 'Register HTML to be injected before the closing BODY tag.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclienthtmlblock'
+    'modX.regClientScript':
+        'prefix': 'regClientScript'
+        'body': 'regClientScript(${1:$src}, ${2:$plaintext});$3'
+        'description': 'Register JavaScript to be injected before the closing BODY tag.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientscript'
+    'modX.regClientStartupHTMLBlock':
+        'prefix': 'regClientStartupHTMLBlock'
+        'body': 'regClientStartupHTMLBlock(${1:$html});$2'
+        'description': 'Register HTML to be injected before the closing HEAD tag.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartuphtmlblock'
+    'modX.regClientStartupScript':
+        'prefix': 'regClientStartupScript'
+        'body': 'regClientStartupScript(${1:$src}, ${2:$plaintext});$3'
+        'description': 'Register JavaScript to be injected inside the HEAD tag of a resource.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartupscript'
+    'modX.reloadConfig':
+        'prefix': 'reloadConfig'
+        'body': 'reloadConfig();$1'
+        'description': 'Reload the config settings. Useful in cases where you\'ve loaded some Settings dynamically.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.reloadconfig'
+    'modX.removeAllEventListener':
+        'prefix': 'removeAllEventListener'
+        'body': 'removeAllEventListener();$1'
+        'description': 'Remove all registered events for the current request.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.removealleventlistener'
+    'modX.removeEventListener':
+        'prefix': 'removeEventListener'
+        'body': 'removeEventListener(${1:$event});$2'
+        'description': 'Remove an event from the eventMap so it will not be invoked.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.removeeventlistener'
+    'modX.runProcessor':
+        'prefix': 'runProcessor'
+        'body': 'runProcessor(${1:$action}, ${2:$scriptProperties}, ${3:$options});$4'
+        'description': 'Loads and runs a specific processor.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runprocessor'
+    'modX.runSnippet':
+        'prefix': 'runSnippet'
+        'body': 'runSnippet(${1:$name}, ${2:$params});$3'
+        'description': 'Process and return the output from a PHP snippet by name.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet'
+    'modX.sendError':
+        'prefix': 'sendError'
+        'body': 'sendError(${1:$type}, ${2:$options});$3'
+        'description': 'Send the user to a type-specific core error page and halt PHP execution.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.senderror'
+    'modX.sendErrorPage':
+        'prefix': 'sendErrorPage'
+        'body': 'sendErrorPage(${1:$id}, ${2:$options});$3'
+        'description': 'Send the user to a MODx virtual error page.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.senderrorpage'
+    'modX.sendForward':
+        'prefix': 'sendForward'
+        'body': 'sendForward(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+        'description': 'Forwards the request to another resource without changing the URL.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendforward'
+    'modX.sendRedirect':
+        'prefix': 'sendRedirect'
+        'body': 'sendRedirect(${1:$url}, ${2:$options}, ${3:$type}, ${4:$responseCode});$5'
+        'description': 'Sends a redirect to the specified URL using the specified method.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendredirect'
+    'modX.sendUnauthorizedPage':
+        'prefix': 'sendUnauthorizedPage'
+        'body': 'sendUnauthorizedPage(${1:$options});$2'
+        'description': 'Send the user to the MODx unauthorized page.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendunauthorizedpage'
+    'modX.setDebug':
+        'prefix': 'setDebug'
+        'body': 'setDebug(${1:$debug}, ${2:$stopOnNotice});$3'
+        'description': 'Sets the debugging features of the modX instance.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setdebug'
+    'modX.setPlaceholder':
+        'prefix': 'setPlaceholder'
+        'body': 'setPlaceholder(${1:$key}, ${2:$value});$3'
+        'description': 'Sets a Placeholder value, corresponding to the "+" syntax.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder'
+    'modX.setPlaceholders':
+        'prefix': 'setPlaceholders'
+        'body': 'setPlaceholders(${1:$placeholders}, ${2:$namespace});$3'
+        'description': 'Sets a collection of placeholders stored in an array or as object vars.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholders'
+    'modX.switchContext':
+        'prefix': 'switchContext'
+        'body': 'switchContext(${1:$contextKey});$2'
+        'description': 'Switches the primary Context for the modX instance.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.switchcontext'
+    'modX.toPlaceholder':
+        'prefix': 'toPlaceholder'
+        'body': 'toPlaceholder(${1:$key}, ${2:$value}, ${3:$prefix}, ${4:$separator}, ${5:$restore});$6'
+        'description': 'Recursively validates and sets placeholders appropriate to the value type passed.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder'
+    'modX.toPlaceholders':
+        'prefix': 'toPlaceholders'
+        'body': 'toPlaceholders(${1:$subject}, ${2:$prefix}, ${3:$separator}, ${4:$restore});$5'
+        'description': 'Sets placeholders from values stored in arrays and objects.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholders'
+    'modX.unsetPlaceholder':
+        'prefix': 'unsetPlaceholder'
+        'body': 'unsetPlaceholder(${1:$key});$2'
+        'description': 'Unsets a placeholder value by key.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholder'
+    'modX.unsetPlaceholders':
+        'prefix': 'unsetPlaceholders'
+        'body': 'unsetPlaceholders(${1:$keys});$2'
+        'description': 'Unset multiple placeholders, either by prefix or an array of keys.'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders'
+    'modX.API':
+        'prefix': 'mapi'
+        'body': """
+                  define('MODX_API_MODE', true);
+                  require_once('$1/index.php');
+                  $modx = new modX();
+                  $modx->initialize('mgr');$2
+                """
+        'description': 'MODX_API_MODE'
+        'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/loading-modx-externally'

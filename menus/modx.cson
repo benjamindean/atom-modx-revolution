@@ -1,10 +1,10 @@
 'menu': [
-  'label': 'Packages'
-  'submenu': [
-    'label': 'MODX Revolution'
+    'label': 'Packages'
     'submenu': [
-      { 'label': 'Scaffold Transport Package', 'command': 'modx-generator:scaffold-transport-package' },
-      { 'label': 'Scaffold Theme', 'command': 'modx-generator:scaffold-theme' }
+        'label': 'MODX Revolution'
+        'submenu': [
+            { 'label': 'Scaffold Transport Package', 'command': 'modx-generator:scaffold-transport-package' },
+            { 'label': 'Scaffold Theme', 'command': 'modx-generator:scaffold-theme' }
+        ]
     ]
-  ]
 ]

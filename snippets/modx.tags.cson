@@ -1,13 +1,13 @@
 '.text.html.basic, .text.html.modx':
-  'MODX.tag':
-    'prefix': 'mt'
-    'body': '[[${1:*}${2:tag}$3]]$4'
-  'MODX.props':
-    'prefix': '&'
-    'body': '&${1:prop}=`${2:value}`$3'
-  'MODX.propset':
-    'prefix': '@'
-    'body': '@${1:propertyset}'
-  'MODX.filter':
-    'prefix': ':'
-    'body': ':${1:filter}=`${2:value}`$3'
+    'MODX.tag':
+        'prefix': 'mt'
+        'body': '[[${1:*}${2:tag}$3]]$4'
+    'MODX.props':
+        'prefix': '&'
+        'body': '&${1:prop}=`${2:value}`$3'
+    'MODX.propset':
+        'prefix': '@'
+        'body': '@${1:propertyset}'
+    'MODX.filter':
+        'prefix': ':'
+        'body': ':${1:filter}=`${2:value}`$3'
