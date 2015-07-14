@@ -129,10 +129,12 @@ class modxInstallView extends View
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) -> dismiss())
 
+
+
     runBuild: (installPath) ->
         dismiss = @dismissNotification
         command = 'php'
-        args = [installPath + '/_build/transport.core.php']
+        args = [path.join(installPath, '_build/transport.core.php')]
         stdout = (output) -> atom.notifications.add 'warning', output
         exit = (code) -> console.log("ps -ef exited with #{code}")
         process = new BufferedProcess({command, args, stdout, exit})
