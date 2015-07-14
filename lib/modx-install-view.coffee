@@ -2,8 +2,8 @@ path = require 'path'
 _ = require 'underscore-plus'
 {$, TextEditorView, View} = require 'atom-space-pen-views'
 {BufferedProcess} = require 'atom'
-fsp = require './fs'
 fs = require 'fs-plus'
+replace = require 'replace'
 
 module.exports =
 class modxInstallView extends View
@@ -11,19 +11,21 @@ class modxInstallView extends View
 
     @content: ->
         @div class: 'modx-revolution', =>
-            @div class: 'error', outlet: 'errorPath'
-            @div class: 'message', outlet: 'messagePath'
-            @subview 'inputPath', new TextEditorView(mini: true)
-            @div class: 'error', outlet: 'errorUsername'
-            @div class: 'message', outlet: 'messageUsername'
-            @subview 'inputUsername', new TextEditorView(mini: true)
-            @div class: 'error', outlet: 'errorPassword'
-            @div class: 'message', outlet: 'messagePassword'
-            @subview 'inputPassword', new TextEditorView(mini: true)
-            @div class: 'row', =>
-                @div class: 'col-xs-12', =>
-                    @div class: 'btn btn-toolbar pull-right', outlet: 'cancelBtn'
-                    @div class: 'btn btn-success', outlet: 'confirmBtn'
+            @div class: 'block', =>
+                @div class: 'message', outlet: 'messagePath'
+                @subview 'inputPath', new TextEditorView(mini: true)
+                @div class: 'error text-error', outlet: 'errorPath'
+            @div class: 'block', =>
+                @div class: 'message', outlet: 'messageUsername'
+                @subview 'inputUsername', new TextEditorView(mini: true)
+                @div class: 'error text-error', outlet: 'errorUsername'
+            @div class: 'block', =>
+                @div class: 'message', outlet: 'messagePassword'
+                @subview 'inputPassword', new TextEditorView(mini: true)
+                @div class: 'error text-error', outlet: 'errorPassword'
+            @div class: 'block btn-toolbar', =>
+                @div class: 'btn btn-success', outlet: 'confirmBtn'
+                @div class: 'btn', outlet: 'cancelBtn'
 
     initialize: ->
         @commandSubscription = atom.commands.add 'atom-workspace',
@@ -82,17 +84,16 @@ class modxInstallView extends View
 
         atom.notifications.add 'success', 'MODX Installation finished',
             buttons: [{
+                text: 'Run Build'
+                className: 'btn-warning'
+                onDidClick: =>
+                    @runBuild(installPath)
+            },{
                 text: 'Open in new window'
                 className: 'btn-success'
                 onDidClick: =>
                     atom.open(pathsToOpen: [installPath])
                     @dismissNotification()
-            },
-            {
-                text: 'Run Build'
-                className: 'btn-warning'
-                onDidClick: =>
-                    @runBuild(installPath)
             }]
             dismissable: true
 
@@ -100,6 +101,7 @@ class modxInstallView extends View
         if @validInstallPath()
             @inProgress()
             @callForGit =>
+                @config()
                 @done()
 
     getInstallPath: ->
@@ -114,8 +116,16 @@ class modxInstallView extends View
 
     validInstallPath: ->
         if fs.existsSync(@getInstallPath())
-            @error.text("Path already exists at '#{@getInstallPath()}'")
-            @error.show()
+            @errorPath.text("Path already exists at '#{@getInstallPath()}'")
+            @errorPath.show()
+            false
+        else if not @inputUsername.getText()
+            @errorUsername.text("MYSQL username must be defined")
+            @errorUsername.show()
+            false
+        else if not @inputPassword.getText()
+            @errorPassword.text("MYSQL password must be defined")
+            @errorPassword.show()
             false
         else
             true
@@ -129,7 +139,28 @@ class modxInstallView extends View
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) -> dismiss())
 
-
+    config: (installPath) ->
+        username = @inputUsername.getText().trim()
+        password = @inputPassword.getText().trim()
+        buildPath = path.join(@getInstallPath(), '_build/')
+        fs.rename(buildPath + 'build.config.sample.php', buildPath + 'build.config.php')
+        fs.rename(buildPath + 'build.properties.sample.php', buildPath + 'build.properties.php')
+        replace
+            regex: "'XPDO_DB_USER', ''"
+            replacement: "'XPDO_DB_USER', '#{username}'"
+            paths: [ buildPath + 'build.config.php' ]
+        replace
+            regex: "'XPDO_DB_PASS', ''"
+            replacement: "'XPDO_DB_PASS', '#{password}'"
+            paths: [ buildPath + 'build.config.php' ]
+        replace
+            regex: "\['mysql_string_username'\]= ''"
+            replacement: "['mysql_string_username']= '#{username}'"
+            paths: [ buildPath + 'build.properties.php' ]
+        replace
+            regex: "\['mysql_string_password'\]= ''"
+            replacement: "['mysql_string_password']= '#{password}'"
+            paths: [ buildPath + 'build.properties.php' ]
 
     runBuild: (installPath) ->
         dismiss = @dismissNotification
