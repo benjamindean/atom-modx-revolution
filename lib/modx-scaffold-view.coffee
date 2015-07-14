@@ -68,8 +68,8 @@ class modxComponentGeneratorView extends View
 
     getComponentsDirectory: ->
         atom.config.get('core.projectHome') or
-          process.env.ATOM_REPOS_HOME or
-          path.join(fs.getHomeDirectory(), 'modx-generator')
+            process.env.ATOM_REPOS_HOME or
+            path.join(fs.getHomeDirectory(), 'modx-generator')
 
     validComponentPath: ->
         if fs.existsSync(@getComponentPath())
@@ -84,7 +84,6 @@ class modxComponentGeneratorView extends View
         fsp.cp templatePath, componentPath, callback
 
     createComponentFiles: (callback) ->
-        ComponentPath = @getComponentPath()
-        packagesDirectory = @getComponentsDirectory()
+        componentPath = @getComponentPath()
         templatePath = path.resolve(__dirname, '..', 'templates', @mode)
-        @initComponent(ComponentPath, templatePath, callback)
+        @initComponent(componentPath, templatePath, callback)
