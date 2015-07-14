@@ -12,8 +12,8 @@
   ],
   "activationCommands": {
     "atom-workspace": [
-      "modx-generator:scaffold-transport-package",
-      "modx-generator:scaffold-theme"
+      "modx-revolution:scaffold-transport-package",
+      "modx-revolution:scaffold-theme"
     ]
   },
   "repository": "https://github.com/benjamindean/atom-modx-revolution",

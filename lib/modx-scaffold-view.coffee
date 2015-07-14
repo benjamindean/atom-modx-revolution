@@ -10,15 +10,15 @@ class modxComponentGeneratorView extends View
     mode: null
 
     @content: ->
-        @div class: 'modx-generator', =>
+        @div class: 'modx-revolution', =>
             @subview 'miniEditor', new TextEditorView(mini: true)
             @div class: 'error', outlet: 'error'
             @div class: 'message', outlet: 'message'
 
     initialize: ->
         @commandSubscription = atom.commands.add 'atom-workspace',
-            'modx-generator:scaffold-transport-package': => @attach('component'),
-            'modx-generator:scaffold-theme': => @attach('theme')
+            'modx-revolution:scaffold-transport-package': => @attach('component'),
+            'modx-revolution:scaffold-theme': => @attach('theme')
 
         @miniEditor.on 'blur', => @close()
         atom.commands.add @element,
@@ -69,7 +69,7 @@ class modxComponentGeneratorView extends View
     getComponentsDirectory: ->
         atom.config.get('core.projectHome') or
             process.env.ATOM_REPOS_HOME or
-            path.join(fs.getHomeDirectory(), 'modx-generator')
+            path.join(fs.getHomeDirectory(), 'modx-revolution')
 
     validComponentPath: ->
         if fs.existsSync(@getComponentPath())
