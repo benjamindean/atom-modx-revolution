@@ -7,8 +7,8 @@ describe 'MODX Revolution', ->
     [activationPromise, workspaceElement] = []
 
     executeCommand = (callback) ->
-        atom.commands.dispatch(workspaceElement, 'modx-generator:scaffold-transport-package')
-        atom.commands.dispatch(workspaceElement, 'modx-generator:scaffold-theme')
+        atom.commands.dispatch(workspaceElement, 'modx-revolution:scaffold-transport-package')
+        atom.commands.dispatch(workspaceElement, 'modx-revolution:scaffold-theme')
         waitsForPromise -> activationPromise
         runs(callback)
 
@@ -23,11 +23,11 @@ describe 'MODX Revolution', ->
                 expect(grammar).toBeTruthy()
                 expect(grammar.scopeName).toBe "text.html.modx"
 
-    describe "when modx-generator:scaffold-transport-package is triggered", ->
+    describe "when modx-revolution:scaffold-transport-package is triggered", ->
         it "displays a miniEditor with the correct text and selection", ->
             executeCommand ->
-                atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-transport-package")
-                modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
+                atom.commands.dispatch(workspaceElement, "modx-revolution:scaffold-transport-package")
+                modxGeneratorView = $(workspaceElement).find(".modx-revolution").view()
                 componentName = modxGeneratorView.miniEditor.getModel().getSelectedText()
                 expect(componentName).toEqual 'my-component'
 
@@ -35,11 +35,11 @@ describe 'MODX Revolution', ->
                 base = atom.config.get 'core.projectHome'
                 expect(fullPath).toEqual path.join(base, 'my-component')
 
-    describe "when modx-generator:scaffold-theme is triggered", ->
+    describe "when modx-revolution:scaffold-theme is triggered", ->
         it "displays a miniEditor with the correct text and selection", ->
             executeCommand ->
-                atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-theme")
-                modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
+                atom.commands.dispatch(workspaceElement, "modx-revolution:scaffold-theme")
+                modxGeneratorView = $(workspaceElement).find(".modx-revolution").view()
                 componentName = modxGeneratorView.miniEditor.getModel().getSelectedText()
                 expect(componentName).toEqual 'my-theme'
 
@@ -51,9 +51,9 @@ describe 'MODX Revolution', ->
         it "detaches from the DOM and focuses the the previously focused element", ->
             executeCommand ->
                 jasmine.attachToDOM(workspaceElement)
-                atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-transport-package")
+                atom.commands.dispatch(workspaceElement, "modx-revolution:scaffold-transport-package")
 
-                modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
+                modxGeneratorView = $(workspaceElement).find(".modx-revolution").view()
                 expect(modxGeneratorView.miniEditor.element).toBe document.activeElement
 
                 atom.commands.dispatch(modxGeneratorView.element, "core:cancel")
@@ -78,10 +78,10 @@ describe 'MODX Revolution', ->
 
             simulate = (type, callback) ->
                 if type is 'transport-package'
-                    atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-transport-package")
+                    atom.commands.dispatch(workspaceElement, "modx-revolution:scaffold-transport-package")
                 else
-                    atom.commands.dispatch(workspaceElement, "modx-generator:scaffold-theme")
-                modxGeneratorView = $(workspaceElement).find(".modx-generator").view()
+                    atom.commands.dispatch(workspaceElement, "modx-revolution:scaffold-theme")
+                modxGeneratorView = $(workspaceElement).find(".modx-revolution").view()
                 expect(modxGeneratorView.hasParent()).toBeTruthy()
                 modxGeneratorView.miniEditor.setText(componentPath)
                 modxExecute = spyOn(modxGeneratorView, 'initComponent').andCallFake (command, args, exit) ->
