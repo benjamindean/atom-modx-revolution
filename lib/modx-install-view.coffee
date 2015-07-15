@@ -124,8 +124,35 @@ class modxInstallView extends View
             atom.notifications.add 'error', error
             dismiss("MODX Installation"))
 
+    installCLI: (installPath) ->
+        dismiss = @dismissNotification
+        command = 'php'
+        args = [path.join(installPath, 'setup/index.php'), '--installmode=new']
+        stdout = (output) -> atom.notifications.add 'warning', output
+        exit = (code) ->
+            dismiss("MODX Installation"))
+            atom.notifications.add 'success', 'Install finished.'
+        process = new BufferedProcess({command, args, stdout, exit})
+        process.onWillThrowError((error) ->
+            atom.notifications.add 'error', error
+            dismiss("MODX Installation"))
+
     checkBuild: (buildPath) ->
         fs.existsSync(buildPath)
+
+    showConfig: ->
+          atom.workspace
+            .open(path.join(@getInstallPath, 'setup/config.dist.new.xml'), searchAllPanes: true)
+            .done (textEditor) =>
+                  pane = atom.workspace.paneForURI(@filePath())
+                  options = { copyActiveItem: true }
+                  pane = pane.splitLeft options
+                  hookEvents(pane.getActiveEditor())
+                  textEditor.destroy()
+                  @disposables.add pane.getActiveEditor().onDidSave => @installCLI()
+                  @disposables.add pane.getActiveEditor().onDidDestroy =>
+                        @currentPane.activate() if @currentPane.alive
+                        @disposables.dispose()
 
     config: ->
         buildPath = path.join(@getInstallPath(), '_build/')
