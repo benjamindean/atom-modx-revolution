@@ -61,14 +61,14 @@ class modxInstallView extends View
             detail: 'MODX Installation is now in progress.\nSuccess message will appear when it\'s done.'
             dismissable: true
 
-    dismissNotification: =>
+    dismissNotification: (message) =>
         atom.notifications.getNotifications().forEach (notification) =>
-            if notification.message.indexOf "MODX Installation" is 0
+            if notification.message is message
                 notification.dismiss()
 
     done: ->
         installPath = @getInstallPath()
-        @dismissNotification()
+        @dismissNotification("MODX Installation")
 
         atom.notifications.add 'success', 'MODX installation finished.',
             buttons: [{
@@ -81,7 +81,7 @@ class modxInstallView extends View
                 className: 'btn-success'
                 onDidClick: =>
                     atom.open(pathsToOpen: [installPath])
-                    @dismissNotification()
+                    @dismissNotification("MODX installation finished.")
             }]
             dismissable: true
 
@@ -103,7 +103,7 @@ class modxInstallView extends View
         else if process.platform is 'darwin'
             path.join(fs.getHomeDirectory(), 'sites')
         else if process.platform is 'win32'
-            'C:'
+            path.join(fs.getHomeDirectory(), 'wamp')
 
     validInstallPath: ->
         if fs.existsSync(@getInstallPath())
@@ -120,7 +120,10 @@ class modxInstallView extends View
         stdout = (output) -> atom.notifications.add 'warning', output
         exit = (code) -> callback()
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) -> dismiss())
+        process.onWillThrowError((error) -> dismiss("MODX Installation"))
+
+    checkBuild: (buildPath) ->
+        fs.existsSync(buildPath)
 
     config: ->
         buildPath = path.join(@getInstallPath(), '_build/')
@@ -138,12 +141,22 @@ class modxInstallView extends View
 
     runBuild: (installPath) ->
         dismiss = @dismissNotification
+        check = @checkBuild
+        atom.notifications.add 'info', 'Build in progress...',
+            dismissable: true
         command = 'php'
         args = [path.join(installPath, '_build/transport.core.php')]
         stdout = (output) -> console.log output
-        exit = (code) -> atom.notifications.add 'success', 'Build done.'
+        exit = (code) ->
+            dismiss("Build in progress...")
+            if check(path.join(installPath, 'core/packages/core.transport.zip'))
+                atom.notifications.add 'success', 'Build done.'
+            else
+                atom.notifications.add 'error', 'core.transport.zip not found.'
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) -> dismiss())
+        process.onWillThrowError((error) ->
+            dismiss("Build in progress...")
+            dismiss("MODX installation"))
 
     callForGit: (callback) ->
         installPath = @getInstallPath()
