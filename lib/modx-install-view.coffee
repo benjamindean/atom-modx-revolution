@@ -2,11 +2,12 @@
 {BufferedProcess} = require 'atom'
 _ = require 'underscore-plus'
 fs = require 'fs-plus'
+fsp = require './fs'
 path = require 'path'
-replace = require 'replace'
 
 module.exports =
 class modxInstallView extends View
+
     previouslyFocusedElement: null
 
     @content: ->
@@ -15,14 +16,6 @@ class modxInstallView extends View
                 @div "Enter installation path", class: 'message', outlet: 'messagePath'
                 @subview 'inputPath', new TextEditorView(mini: true)
                 @div class: 'error text-error', style: "display:none", outlet: 'errorPath'
-            @div class: 'block', =>
-                @div "MySQL Username", class: 'message', outlet: 'messageUsername'
-                @subview 'inputUsername', new TextEditorView(mini: true)
-                @div "MySQL Username must be defined", style: "display:none", class: 'error text-error', outlet: 'errorUsername'
-            @div class: 'block', =>
-                @div "MySQL Password", class: 'message', outlet: 'messagePassword'
-                @subview 'inputPassword', new TextEditorView(mini: true)
-                @div "MySQL Password must be defined", style: "display:none", class: 'error text-error', outlet: 'errorPassword'
             @div class: 'block btn-toolbar', =>
                 @div "Confirm", class: 'btn btn-success', outlet: 'confirmBtn'
                 @div "Close", class: 'btn', outlet: 'cancelBtn'
@@ -65,7 +58,7 @@ class modxInstallView extends View
     inProgress: ->
         @close()
         atom.notifications.add 'info', 'MODX Installation',
-            detail: 'MODX Installation is now in progress. Success message will appear once it finishes.'
+            detail: 'MODX Installation is now in progress.\nSuccess message will appear when it\'s done.'
             dismissable: true
 
     dismissNotification: =>
@@ -77,8 +70,7 @@ class modxInstallView extends View
         installPath = @getInstallPath()
         @dismissNotification()
 
-        atom.notifications.add 'success', 'MODX Installation finished.',
-            #detail: 'Path: <i>#{installPath}</i>'
+        atom.notifications.add 'success', 'MODX installation finished.',
             buttons: [{
                 text: 'Run Build'
                 className: 'btn-warning'
@@ -106,25 +98,20 @@ class modxInstallView extends View
         path.join(path.dirname(InstallPath), ComponentName)
 
     getComponentsDirectory: ->
-        atom.config.get('core.projectHome') or
-            process.env.ATOM_REPOS_HOME or
-            path.join(fs.getHomeDirectory(), 'modx-revolution')
+        if process.platform is 'linux'
+            '/var/www'
+        else if process.platform is 'darwin'
+            path.join(fs.getHomeDirectory(), 'sites')
+        else if process.platform is 'win32'
+            'C:'
 
     validInstallPath: ->
         if fs.existsSync(@getInstallPath())
             @errorPath.text("Path already exists at '#{@getInstallPath()}'")
             @errorPath.show()
+            false
         else
-            @errorPath.hide()
-        if not @inputUsername.getText()
-            @errorUsername.show()
-        else
-            @errorUsername.hide()
-        if not @inputPassword.getText()
-            @errorPassword.show()
-        else
-            @errorPassword.hide()
-        not fs.existsSync(@getInstallPath()) and @inputUsername.getText() and @inputPassword.getText()
+            true
 
     installModx: (installPath, callback) ->
         dismiss = @dismissNotification
@@ -135,39 +122,26 @@ class modxInstallView extends View
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) -> dismiss())
 
-    config: (installPath) ->
-
-        username = @inputUsername.getText().trim()
-        password = @inputPassword.getText().trim()
+    config: ->
         buildPath = path.join(@getInstallPath(), '_build/')
         buildConf = buildPath + 'build.config.php'
         buildProp = buildPath + 'build.properties.php'
 
-        fs.rename(buildPath + 'build.config.sample.php', buildConf)
-        fs.rename(buildPath + 'build.properties.sample.php', buildProp)
-        replace
-            regex: "'XPDO_DB_USER', ''"
-            replacement: "'XPDO_DB_USER', '#{username}'"
-            paths: [ buildConf ]
-        replace
-            regex: "'XPDO_DB_PASS', ''"
-            replacement: "'XPDO_DB_PASS', '#{password}'"
-            paths: [ buildConf ]
-        replace
-            regex: "\['mysql_string_username'\]= ''"
-            replacement: "['mysql_string_username']= '#{username}'"
-            paths: [ buildProp ]
-        replace
-            regex: "\['mysql_string_password'\]= ''"
-            replacement: "['mysql_string_password']= '#{password}'"
-            paths: [ buildProp ]
+        fs.copy(buildPath + 'build.config.sample.php', buildConf)
+        fs.copy(buildPath + 'build.properties.sample.php', buildProp)
+
+        @fixPermissions(@getInstallPath())
+
+    fixPermissions: (installPath) ->
+        if process.platform is 'linux' or 'darwin'
+            fsp.chmod(installPath, '777')
 
     runBuild: (installPath) ->
         dismiss = @dismissNotification
         command = 'php'
         args = [path.join(installPath, '_build/transport.core.php')]
         stdout = (output) -> console.log output
-        exit = (code) -> atom.notifications.add 'success', 'Build done'
+        exit = (code) -> atom.notifications.add 'success', 'Build done.'
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) -> dismiss())
 

@@ -24,8 +24,10 @@
     "fs-plus": "^2.0.0",
     "ncp": "^2.0.0",
     "replace": "^0.3.0",
+    "replacestream": "^4.0.0",
     "temp": "^0.8.1",
-    "underscore-plus": "^1.0.0"
+    "underscore-plus": "^1.0.0",
+    "wrench": "^1.5.8"
   },
   "engines": {
     "atom": ">0.50.0"
