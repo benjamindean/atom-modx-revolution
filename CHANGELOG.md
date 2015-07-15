@@ -27,3 +27,6 @@
 - New specs
 - Grammar adjustments
 - <kbd>Ctrl</kbd>+<kbd>Space</kbd> expands snippet
+
+## [1.0.3] - 15-07-15
+- MODX git installation added

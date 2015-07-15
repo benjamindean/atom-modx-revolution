@@ -29,13 +29,32 @@ To enable syntax highlighting, switch to HTML (MODX) syntax.
 
 ####Theme and Transport Package scaffolding
 
-Hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> and search for `MODX Generator`. There is two options available:
+Hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> and search for `MODX Revolution`. There is two options available:
 
 * Scaffold Transport Package
 * Scaffold Theme
 
 Transport Package template (modExtra) originally developed by [Shaun McCormick](https://github.com/splittingred).
 Please, read the [modExtra](https://github.com/splittingred/modExtra) documentation before using it. There is also a relevant [page](http://rtfm.modx.com/extras/revo/modextra) at MODX RTFM.
+
+####MODX Git Installation
+
+The purpose of this is to provide fast and easy method for installing MODX locally.
+
+You should have `git`, `php` and some server environment installed in order for this to work.
+
+Hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> and run `Install MODX`.
+
+**How it works:**
+- Pulls MODX from the official repository
+- Duplicates sample config files
+- Provides on option to `Run Build` or/and Open MODX root folder in the new editor window
+
+After installation is finished, open *localhost/path/to/modx/setup* in your browser and follow the instructions.
+
+Find out more about MODX Git Installation [here](http://rtfm.modx.com/revolution/2.x/getting-started/installation/git-installation).
+
+NOTE: Was tested on Linux only. If you found any bugs, please, submit an issue.
 
 ###Triggers
 

@@ -120,7 +120,9 @@ class modxInstallView extends View
         stdout = (output) -> atom.notifications.add 'warning', output
         exit = (code) -> callback()
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) -> dismiss("MODX Installation"))
+        process.onWillThrowError((error) ->
+            atom.notifications.add 'error', error
+            dismiss("MODX Installation"))
 
     checkBuild: (buildPath) ->
         fs.existsSync(buildPath)
@@ -156,7 +158,8 @@ class modxInstallView extends View
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) ->
             dismiss("Build in progress...")
-            dismiss("MODX installation"))
+            dismiss("MODX installation")
+            atom.notifications.add 'error', error)
 
     callForGit: (callback) ->
         installPath = @getInstallPath()
