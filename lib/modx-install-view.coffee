@@ -1,4 +1,5 @@
 {$, TextEditorView, View} = require 'atom-space-pen-views'
+{CompositeDisposable} = require 'atom'
 {BufferedProcess} = require 'atom'
 _ = require 'underscore-plus'
 fs = require 'fs-plus'
@@ -57,9 +58,10 @@ class modxInstallView extends View
 
     inProgress: ->
         @close()
-        atom.notifications.add 'info', 'MODX Installation',
-            detail: 'MODX Installation is now in progress.\nSuccess message will appear when it\'s done.'
-            dismissable: true
+        if fs.makeTreeSync(@getInstallPath())
+            atom.notifications.add 'info', 'MODX Installation',
+                detail: 'MODX Installation is now in progress.\nSuccess message will appear when it\'s done.'
+                dismissable: true
 
     dismissNotification: (message) =>
         atom.notifications.getNotifications().forEach (notification) =>
@@ -114,6 +116,7 @@ class modxInstallView extends View
             true
 
     installModx: (installPath, callback) ->
+        fs.makeTreeSync(installPath)
         dismiss = @dismissNotification
         command = 'git'
         args = ['clone', 'http://github.com/modxcms/revolution.git', installPath]
@@ -130,7 +133,7 @@ class modxInstallView extends View
         args = [path.join(installPath, 'setup/index.php'), '--installmode=new']
         stdout = (output) -> atom.notifications.add 'warning', output
         exit = (code) ->
-            dismiss("MODX Installation"))
+            dismiss("MODX Installation")
             atom.notifications.add 'success', 'Install finished.'
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) ->
@@ -141,28 +144,31 @@ class modxInstallView extends View
         fs.existsSync(buildPath)
 
     showConfig: ->
-          atom.workspace
-            .open(path.join(@getInstallPath, 'setup/config.dist.new.xml'), searchAllPanes: true)
+        file = path.join(@getInstallPath(), 'setup/config.xml')
+        atom.workspace
+            .open(file, searchAllPanes: true)
             .done (textEditor) =>
-                  pane = atom.workspace.paneForURI(@filePath())
-                  options = { copyActiveItem: true }
-                  pane = pane.splitLeft options
-                  hookEvents(pane.getActiveEditor())
-                  textEditor.destroy()
-                  @disposables.add pane.getActiveEditor().onDidSave => @installCLI()
-                  @disposables.add pane.getActiveEditor().onDidDestroy =>
-                        @currentPane.activate() if @currentPane.alive
-                        @disposables.dispose()
+                pane = atom.workspace.paneForURI(file)
+                options = { copyActiveItem: true }
+                pane.splitLeft options
+                textEditor.destroy()
+                @disposable = new CompositeDisposable
+                @disposable.add pane.getActiveEditor().onDidSave => @installCLI()
+                @disposable.add pane.getActiveEditor().onDidDestroy => @disposable.dispose()
 
     config: ->
         buildPath = path.join(@getInstallPath(), '_build/')
         buildConf = buildPath + 'build.config.php'
         buildProp = buildPath + 'build.properties.php'
+        configPath = path.join(@getInstallPath(), 'setup/')
+        config = configPath + 'config.xml'
 
         fs.copy(buildPath + 'build.config.sample.php', buildConf)
         fs.copy(buildPath + 'build.properties.sample.php', buildProp)
+        fs.copy(configPath + 'config.dist.new.xml', config)
 
         @fixPermissions(@getInstallPath())
+        @showConfig()
 
     fixPermissions: (installPath) ->
         if process.platform is 'linux' or 'darwin'
