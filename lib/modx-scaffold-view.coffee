@@ -1,8 +1,9 @@
-path = require 'path'
-_ = require 'underscore-plus'
 {$, TextEditorView, View} = require 'atom-space-pen-views'
-fsp = require './fs'
+_ = require 'underscore-plus'
 fs = require 'fs-plus'
+fsp = require './fs'
+path = require 'path'
+
 
 module.exports =
 class modxComponentGeneratorView extends View

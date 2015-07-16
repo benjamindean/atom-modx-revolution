@@ -13,7 +13,8 @@
   "activationCommands": {
     "atom-workspace": [
       "modx-revolution:scaffold-transport-package",
-      "modx-revolution:scaffold-theme"
+      "modx-revolution:scaffold-theme",
+      "modx-revolution:install-modx"
     ]
   },
   "repository": "https://github.com/benjamindean/atom-modx-revolution",
@@ -23,7 +24,8 @@
     "fs-plus": "^2.0.0",
     "ncp": "^2.0.0",
     "temp": "^0.8.1",
-    "underscore-plus": "^1.0.0"
+    "underscore-plus": "^1.0.0",
+    "wrench": "^1.5.8"
   },
   "engines": {
     "atom": ">0.50.0"
