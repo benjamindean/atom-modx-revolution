@@ -1,7 +1,7 @@
 {
   "name": "modx-revolution",
   "main": "./lib/main",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "MODX Revolution support in Atom",
   "keywords": [
     "snippets",
