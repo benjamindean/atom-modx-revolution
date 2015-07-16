@@ -1,9 +1,12 @@
 modxComponentGeneratorView = require './modx-scaffold-view'
+modxInstallView = require './modx-install-view'
 
 module.exports =
 
     activate: ->
-        @view = new modxComponentGeneratorView()
+        @scaffoldView = new modxComponentGeneratorView()
+        @installView = new modxInstallView()
 
     deactivate: ->
-        @view?.destroy()
+        @scaffoldView?.destroy()
+        @installView?.destroy()

@@ -29,7 +29,7 @@ To enable syntax highlighting, switch to HTML (MODX) syntax.
 
 ####Theme and Transport Package scaffolding
 
-Hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> and search for `MODX Generator`. There is two options available:
+Open Command Palette and search for `MODX Revolution`. There is two options available:
 
 * Scaffold Transport Package
 * Scaffold Theme
@@ -37,7 +37,38 @@ Hit <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> and search for `MODX Generator
 Transport Package template (modExtra) originally developed by [Shaun McCormick](https://github.com/splittingred).
 Please, read the [modExtra](https://github.com/splittingred/modExtra) documentation before using it. There is also a relevant [page](http://rtfm.modx.com/extras/revo/modextra) at MODX RTFM.
 
-###Triggers
+####MODX Installation
+
+The purpose of this is to provide fast and easy method for installing MODX locally without leaving the editor.
+
+**Requirements**
+- `git`*
+- `php`*
+- Some server environment (MySQL, Apache2, etc)
+
+\* Both should be available in your PATH.
+
+**How To**
+
+1. Open Command Palette and run `Install MODX`
+2. Enter path where MODX should be installed
+3. Edit *config.yml*, save it
+4. For CLI installation, just click `Install` and wait for the success message. Then, open *localhost/path/to/modx/manager* in your browser.  
+    If you want to use a web-based installation, click `Run Build` and install MODX via *localhost/path/to/modx/setup*.
+
+**How it works**
+- Pulls MODX from the official repository
+- Duplicates sample config files
+- Duplicates setup config
+- Opens setup config for edit
+- Installs MODX
+
+[MODX Git Installation docs](http://rtfm.modx.com/revolution/2.x/getting-started/installation/git-installation)  
+[MODX CLI Installation docs](http://rtfm.modx.com/revolution/2.x/getting-started/installation/command-line-installation)
+
+NOTE: This one is still in beta. If you found any bugs, please, submit an issue.
+
+###Snippet Triggers
 
 | Snippet | Trigger | Scope |
 | ------- | ------- | ----- |
