@@ -66,7 +66,7 @@ The purpose of this is to provide fast and easy method for installing MODX local
 [MODX Git Installation docs](http://rtfm.modx.com/revolution/2.x/getting-started/installation/git-installation)  
 [MODX CLI Installation docs](http://rtfm.modx.com/revolution/2.x/getting-started/installation/command-line-installation)
 
-NOTE: This one is still in beta, so, if you found any bugs, please, submit an issue.
+NOTE: This one is still in beta. If you found any bugs, please, submit an issue.
 
 ###Snippet Triggers
 
