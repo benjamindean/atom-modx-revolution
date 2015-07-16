@@ -59,8 +59,8 @@ class modxInstallView extends View
     inProgress: ->
         @close()
         if fs.makeTreeSync(@getInstallPath())
-            atom.notifications.add 'info', 'MODX Installation',
-                detail: 'MODX Installation is now in progress.\nSuccess message will appear when it\'s done.'
+            atom.notifications.add 'info', 'MODX downloaded successfully',
+                detail: 'MODX downloaded successfully is now in progress.\nSuccess message will appear when it\'s done.'
                 dismissable: true
 
     dismissNotification: (message) =>
@@ -70,20 +70,15 @@ class modxInstallView extends View
 
     done: ->
         installPath = @getInstallPath()
-        @dismissNotification("MODX Installation")
+        @dismissNotification("MODX downloaded successfully")
 
-        atom.notifications.add 'success', 'MODX installation finished.',
+        atom.notifications.add 'success', 'MODX downloaded successfully',
             buttons: [{
-                text: 'Run Build'
-                className: 'btn-warning'
-                onDidClick: =>
-                    @runBuild(installPath)
-            },{
                 text: 'Open in New Window'
                 className: 'btn-success'
                 onDidClick: =>
                     atom.open(pathsToOpen: [installPath])
-                    @dismissNotification("MODX installation finished.")
+                    @dismissNotification("MODX downloaded successfully")
             }]
             dismissable: true
 
@@ -115,7 +110,7 @@ class modxInstallView extends View
         else
             true
 
-    installModx: (installPath, callback) ->
+    downloadModx: (installPath, callback) ->
         fs.makeTreeSync(installPath)
         dismiss = @dismissNotification
         command = 'git'
@@ -125,20 +120,26 @@ class modxInstallView extends View
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) ->
             atom.notifications.add 'error', error
-            dismiss("MODX Installation"))
+            dismiss("MODX downloaded successfully"))
 
     installCLI: (installPath) ->
+        if atom.workspace.getActivePane().getItems().length > 1
+            atom.workspace.destroyActivePaneItem()
+        else
+            atom.workspace.destroyActivePane()
+
         dismiss = @dismissNotification
         command = 'php'
-        args = [path.join(installPath, 'setup/index.php'), '--installmode=new']
-        stdout = (output) -> atom.notifications.add 'warning', output
+        args = [path.join(@getInstallPath(), 'setup/index.php'), '--installmode=new']
+        stdout = (output) -> atom.notifications.add 'info', output
         exit = (code) ->
-            dismiss("MODX Installation")
-            atom.notifications.add 'success', 'Install finished.'
+            dismiss("MODX downloaded successfully")
+            dismiss("Edit Setup Config")
+            atom.notifications.add 'success', 'Install finished'
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) ->
             atom.notifications.add 'error', error
-            dismiss("MODX Installation"))
+            dismiss("MODX downloaded successfully"))
 
     checkBuild: (buildPath) ->
         fs.existsSync(buildPath)
@@ -148,13 +149,34 @@ class modxInstallView extends View
         atom.workspace
             .open(file, searchAllPanes: true)
             .done (textEditor) =>
-                pane = atom.workspace.paneForURI(file)
-                options = { copyActiveItem: true }
-                pane.splitLeft options
-                textEditor.destroy()
-                @disposable = new CompositeDisposable
-                @disposable.add pane.getActiveEditor().onDidSave => @installCLI()
-                @disposable.add pane.getActiveEditor().onDidDestroy => @disposable.dispose()
+                @showPane(textEditor)
+                atom.notifications.add 'info', 'Edit Setup Config',
+                    detail: 'Edit setup config, save it and click "Install".\nIf you don\'t want to use CLI installation, click "Run Build" and perform regular web-based installation.'
+                    buttons: [{
+                        text: 'Install'
+                        className: 'btn-success'
+                        onDidClick: =>
+                            @runBuild(@getInstallPath())
+                            @installCLI()
+                    },
+                    {
+                        text: 'Run Build'
+                        className: 'btn-info'
+                        onDidClick: =>
+                            @runBuild(@getInstallPath())
+                    }]
+                    dismissable: true
+
+    showPane: (oldEditor) ->
+        file = path.join(@getInstallPath(), 'setup/config.xml')
+        @disposables = new CompositeDisposable
+        pane = atom.workspace.paneForURI(file)
+        options = { copyActiveItem: true }
+        hookEvents = (textEditor) =>
+            oldEditor.destroy()
+            @disposables.add textEditor.onDidDestroy => @disposables.dispose()
+        pane = pane.splitLeft options
+        hookEvents(pane.getActiveEditor())
 
     config: ->
         buildPath = path.join(@getInstallPath(), '_build/')
@@ -165,7 +187,7 @@ class modxInstallView extends View
 
         fs.copy(buildPath + 'build.config.sample.php', buildConf)
         fs.copy(buildPath + 'build.properties.sample.php', buildProp)
-        fs.copy(configPath + 'config.dist.new.xml', config)
+        fs.createReadStream(configPath + 'config.dist.new.xml').pipe(fs.createWriteStream(config));
 
         @fixPermissions(@getInstallPath())
         @showConfig()
@@ -185,15 +207,15 @@ class modxInstallView extends View
         exit = (code) ->
             dismiss("Build in progress...")
             if check(path.join(installPath, 'core/packages/core.transport.zip'))
-                atom.notifications.add 'success', 'Build done.'
+                atom.notifications.add 'success', 'Build done'
             else
                 atom.notifications.add 'error', 'core.transport.zip not found.'
         process = new BufferedProcess({command, args, stdout, exit})
         process.onWillThrowError((error) ->
             dismiss("Build in progress...")
-            dismiss("MODX installation")
+            dismiss("MODX downloaded successfully")
             atom.notifications.add 'error', error)
 
     callForGit: (callback) ->
         installPath = @getInstallPath()
-        @installModx(installPath, callback)
+        @downloadModx(installPath, callback)
