@@ -59,8 +59,8 @@ class modxInstallView extends View
     inProgress: ->
         @close()
         if fs.makeTreeSync(@getInstallPath())
-            atom.notifications.add 'info', 'MODX downloaded successfully',
-                detail: 'MODX downloaded successfully is now in progress.\nSuccess message will appear when it\'s done.'
+            atom.notifications.add 'info', 'Cloning MODX repository',
+                detail: 'Success message will appear when it\'s done.'
                 dismissable: true
 
     dismissNotification: (message) =>
@@ -70,7 +70,7 @@ class modxInstallView extends View
 
     done: ->
         installPath = @getInstallPath()
-        @dismissNotification("MODX downloaded successfully")
+        @dismissNotification("Cloning MODX repository")
 
         atom.notifications.add 'success', 'MODX downloaded successfully',
             buttons: [{
@@ -123,11 +123,6 @@ class modxInstallView extends View
             dismiss("MODX downloaded successfully"))
 
     installCLI: (installPath) ->
-        if atom.workspace.getActivePane().getItems().length > 1
-            atom.workspace.destroyActivePaneItem()
-        else
-            atom.workspace.destroyActivePane()
-
         dismiss = @dismissNotification
         command = 'php'
         args = [path.join(@getInstallPath(), 'setup/index.php'), '--installmode=new']
