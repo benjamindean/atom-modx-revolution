@@ -46,7 +46,8 @@ The purpose of this is to provide fast and easy method for installing MODX local
 - `php`*
 - Some server environment (MySQL, Apache2, etc)
 
-\* Both should be available in your PATH.
+\* Both should be available in your PATH.  
+*date.timezone* must be set in php.ini.
 
 **How To**
 

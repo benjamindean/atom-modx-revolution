@@ -112,29 +112,27 @@ class modxInstallView extends View
 
     downloadModx: (installPath, callback) ->
         fs.makeTreeSync(installPath)
-        dismiss = @dismissNotification
         command = 'git'
         args = ['clone', 'http://github.com/modxcms/revolution.git', installPath]
         stdout = (output) -> atom.notifications.add 'warning', output
         exit = (code) -> callback()
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) ->
-            atom.notifications.add 'error', error
-            dismiss("MODX downloaded successfully"))
+        process.onWillThrowError((error) =>
+            @dismissNotification("Cloning MODX repository"))
 
     installCLI: (installPath) ->
-        dismiss = @dismissNotification
         command = 'php'
         args = [path.join(@getInstallPath(), 'setup/index.php'), '--installmode=new']
-        stdout = (output) -> atom.notifications.add 'info', output
-        exit = (code) ->
-            dismiss("MODX downloaded successfully")
-            dismiss("Edit Setup Config")
+        stdout = (output) ->
+            atom.notifications.add 'info', output,
+                dismissable: true
+        exit = (code) =>
+            @dismissNotification("MODX downloaded successfully")
+            @dismissNotification("Edit Setup Config")
             atom.notifications.add 'success', 'Install finished'
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) ->
-            atom.notifications.add 'error', error
-            dismiss("MODX downloaded successfully"))
+        process.onWillThrowError((error) =>
+            @dismissNotification("MODX downloaded successfully"))
 
     checkBuild: (buildPath) ->
         fs.existsSync(buildPath)
@@ -166,11 +164,10 @@ class modxInstallView extends View
         file = path.join(@getInstallPath(), 'setup/config.xml')
         @disposables = new CompositeDisposable
         pane = atom.workspace.paneForURI(file)
-        options = { copyActiveItem: true }
         hookEvents = (textEditor) =>
             oldEditor.destroy()
             @disposables.add textEditor.onDidDestroy => @disposables.dispose()
-        pane = pane.splitLeft options
+        pane = pane.splitLeft { copyActiveItem: true }
         hookEvents(pane.getActiveEditor())
 
     config: ->
@@ -192,24 +189,20 @@ class modxInstallView extends View
             fsp.chmod(installPath, '777')
 
     runBuild: (installPath) ->
-        dismiss = @dismissNotification
-        check = @checkBuild
         atom.notifications.add 'info', 'Build in progress...',
             dismissable: true
         command = 'php'
         args = [path.join(installPath, '_build/transport.core.php')]
         stdout = (output) -> console.log output
-        exit = (code) ->
-            dismiss("Build in progress...")
-            if check(path.join(installPath, 'core/packages/core.transport.zip'))
+        exit = (code) =>
+            @dismissNotification("Build in progress...")
+            if @checkBuild(path.join(installPath, 'core/packages/core.transport.zip'))
                 atom.notifications.add 'success', 'Build done'
             else
                 atom.notifications.add 'error', 'core.transport.zip not found.'
         process = new BufferedProcess({command, args, stdout, exit})
-        process.onWillThrowError((error) ->
-            dismiss("Build in progress...")
-            dismiss("MODX downloaded successfully")
-            atom.notifications.add 'error', error)
+        process.onWillThrowError((error) =>
+            @dismissNotification("Build in progress..."))
 
     callForGit: (callback) ->
         installPath = @getInstallPath()
