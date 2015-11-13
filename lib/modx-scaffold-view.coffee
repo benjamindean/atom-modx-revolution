@@ -4,7 +4,6 @@ fs = require 'fs-plus'
 fsp = require './fs'
 path = require 'path'
 
-
 module.exports =
 class modxComponentGeneratorView extends View
     previouslyFocusedElement: null
@@ -35,10 +34,7 @@ class modxComponentGeneratorView extends View
         @previouslyFocusedElement = $(document.activeElement)
         @panel.show()
         @message.text("Enter #{mode} path")
-        if @mode is "component"
-            @setPathText("my-component")
-        else
-            @setPathText("my-theme")
+        if @mode is "component" then @setPathText("my-component") else @setPathText("my-theme")
         @miniEditor.focus()
 
     setPathText: (placeholderName, rangeToSelect) ->
@@ -74,8 +70,7 @@ class modxComponentGeneratorView extends View
 
     validComponentPath: ->
         if fs.existsSync(@getComponentPath())
-            @error.text("Path already exists at '#{@getComponentPath()}'")
-            @error.show()
+            @error.text("Path already exists at '#{@getComponentPath()}'").show()
             false
         else
             true

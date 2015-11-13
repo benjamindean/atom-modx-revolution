@@ -104,8 +104,7 @@ class modxInstallView extends View
 
     validInstallPath: ->
         if fs.existsSync(@getInstallPath())
-            @errorPath.text("Path already exists at '#{@getInstallPath()}'")
-            @errorPath.show()
+            @errorPath.text("Path already exists at '#{@getInstallPath()}'").show()
             false
         else
             true
