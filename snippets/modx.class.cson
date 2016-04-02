@@ -277,6 +277,16 @@
         'body': 'unsetPlaceholders(${1:$keys});$2'
         'description': 'Unset multiple placeholders, either by prefix or an array of keys.'
         'descriptionMoreURL': 'http://rtfm.modx.com/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders'
+    'modX.resource':
+        'prefix': 'resource'
+        'body': 'resource'
+        'description': 'Resource object.'
+        'descriptionMoreURL': 'https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/resources'
+    'modX.context':
+        'prefix': 'context'
+        'body': 'context'
+        'description': 'Context object.'
+        'descriptionMoreURL': 'https://rtfm.modx.com/revolution/2.x/administering-your-site/contexts'
     'modX.API':
         'prefix': 'mapi'
         'body': """

@@ -101,6 +101,8 @@ class modxInstallView extends View
             path.join(fs.getHomeDirectory(), 'sites')
         else if process.platform is 'win32'
             path.join(fs.getHomeDirectory(), 'wamp')
+        else
+            path.join(fs.getHomeDirectory(), 'modx')
 
     validInstallPath: ->
         if fs.existsSync(@getInstallPath())
@@ -150,8 +152,7 @@ class modxInstallView extends View
                         onDidClick: =>
                             @runBuild(@getInstallPath())
                             @installCLI()
-                    },
-                    {
+                    },{
                         text: 'Run Build'
                         className: 'btn-info'
                         onDidClick: =>
